@@ -31,7 +31,6 @@ function createTopicsPage() {
   var div3 = document.createElement("div");
   div3.classList.add("col-0", "col-sm-3");
 
-
   //adding the title and the box to the center col (col2)
   div2.appendChild(title);
   div2.appendChild(box);
@@ -43,12 +42,10 @@ function createTopicsPage() {
 
   //adding the row to the container
   var container = document.getElementsByClassName("container")[0];
-  container.appendChild(row);
-  
+  container.appendChild(row); 
 }
 
 function buttons() {
-
   //APIs
   /*var request = new XMLHttpRequest(); //create a new instance of XMLHttpRequest object
 
@@ -58,11 +55,9 @@ function buttons() {
   request.open("GET", "https://fcg-api.herokuapp.com/api/alltopics"); 
   request.send();*/
 
-
   var topics = ["Ethics", "History", "Philosophy", "Arabic", "Physics", "Theology", "Comparative-Religion", "Biology"];
 
-   for(var i = 0; i < topics.length; i++)
-  {
+   for(var i = 0; i < topics.length; i++) {
     var button = document.createElement("button");
     var topic = topics[i];
     button.innerHTML = topic;
@@ -70,20 +65,15 @@ function buttons() {
     box.appendChild(button);
 
     button.addEventListener("click", function() {
-      
       getSubTopics(topic);
-
     });
   }
 }
 
 function getSubTopics(topic) {
-
   var subtopics = ["Pre-Modern", "Contemporary", "Ancient", "Classical", "More", "More", "More", "More"];
   div2.classList.remove("title", "box");
   loadSubTopics();
-
-
 }
 
 

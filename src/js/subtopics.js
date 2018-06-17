@@ -9,8 +9,6 @@ function loadSubTopics() {
   buttons1();
 }
 
-
-
 function createSubTopicsPage() {
 
   var row = document.createElement("div");
