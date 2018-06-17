@@ -1,13 +1,3 @@
-/* var request = new XMLHttpRequest();
-
-request.open("GET", "https://fcg-api.herokuapp.com/api/topics/topic?=ethics");
-
-request.onreadystatechange = function () {
-  console.log(request.response);
-}
-
-request.send(); */
-
 var alltopics = {
   topics: ["History", "Ethics", "Philosophy"],
 };
@@ -25,5 +15,3 @@ function getQuestionTitle() {
 }
 
 document.addEventListener("DOMContentLoaded", getQuestionTitle);
-
-getQuestionTitle();
