@@ -45,7 +45,7 @@ app.get('/api/topics', (req, res) => {
   }).on("error", (err) => {
     console.log("Error: " + err.message);
   });
-})
+});
 
 /**
  * Start the server
