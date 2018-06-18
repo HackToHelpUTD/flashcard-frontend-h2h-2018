@@ -47,6 +47,25 @@ app.get('/api/topics', (req, res) => {
   });
 });
 
+app.get('/api/questions', (req, res) => {
+  var { subtopic, type, difficulty } = req.query;
+
+  https.get(`https://fcg-api.herokuapp.com/api/questions?subtopic=${subtopic}&type=${type}&difficulty=${difficulty}`, (response) => {
+    let data = '';
+
+    response.on('data', (chunk) => {
+      data += chunk;
+    });
+    // The whole response has been received. Print out the result.
+    response.on('end', () => {
+      console.log(JSON.parse(data));
+      res.json(JSON.parse(data));
+    });
+  }).on("error", (err) => {
+    console.log("Error: " + err.message);
+  });
+});
+
 /**
  * Start the server
  */
