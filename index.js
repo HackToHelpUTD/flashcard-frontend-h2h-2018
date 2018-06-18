@@ -28,7 +28,7 @@ app.get('/api/alltopics', (req, res) => {
 app.get('/api/topics', (req, res) => {
   var topic_arg = req.query.topic;
 
-  https.get(`https://fcg-api.herokuapp.com/api/alltopics/api/topics/topic?=${topic_arg}`, (response) => {
+  https.get(`https://fcg-api.herokuapp.com/api/topics?topic=${topic_arg}`, (response) => {
     let data = '';
 
     response.on('data', (chunk) => {
