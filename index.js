@@ -8,6 +8,9 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 
+/**
+ * API ENDPOINTS
+ */
 app.get('/api/alltopics', (req, res) => {
   https.get('https://fcg-api.herokuapp.com/api/alltopics', (response) => {
     let data = '';
@@ -44,6 +47,9 @@ app.get('/api/topics', (req, res) => {
   });
 })
 
+/**
+ * Start the server
+ */
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
