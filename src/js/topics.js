@@ -9,9 +9,11 @@ function createTopicsPage() {
 
   var div1 = document.createElement("div");
   div1.classList.add("col-0", "col-sm-3");
+  div1.id = "backButton";
 
   div2 = document.createElement("div");
   div2.classList.add("col-12", "col-sm-6");
+
   //Title
   title = document.createElement("div"); 
   title.innerHTML = "Choose a Topic!";
@@ -37,12 +39,10 @@ function createTopicsPage() {
   container.appendChild(row); 
 }
 
+//Obtains info from the APIs
 function getTopics() {
-  //APIs
   var topics;
-
-  var request = new XMLHttpRequest(); //create a new instance of XMLHttpRequest object
-
+  var request = new XMLHttpRequest(); 
   request.onreadystatechange =  function() {
     if(request.readyState == 4 && request.status == 200) {
       console.log(request.response);
@@ -52,7 +52,6 @@ function getTopics() {
       createButtons(topics);
     }
   }
-
   request.open("GET", "/api/alltopics");
   request.send();
 }
@@ -75,21 +74,16 @@ function createButtons(topics) {
 
 function getSubTopics(topic)
 {
-      var box = document.getElementsByClassName("box")[0];
-      while(box.firstChild)
-      {
-          box.removeChild(box.firstChild);
-
+  //Clears the buttons and title
+    var box = document.getElementsByClassName("box")[0];
+    while(box.firstChild) {
+        box.removeChild(box.firstChild); 
       }
-      
-      var title = document.getElementsByClassName("title")[0];
-      while(title.firstChild)
-      {
-          title.removeChild(title.firstChild);
-
+    var title = document.getElementsByClassName("title")[0];
+    while(title.firstChild) {
+        title.removeChild(title.firstChild);
       }
-      loadSubTopics(topic);
-
+    loadSubTopics(topic);
 }
 
 

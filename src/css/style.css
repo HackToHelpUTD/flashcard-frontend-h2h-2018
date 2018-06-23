@@ -30,7 +30,22 @@ body {
   width: 16rem;
   font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
-  
+  transition: ease-in-out 0.2s; 
+}
+
+.button-style:hover {
+  transform: scale(1.1);
+}
+
+.back-Button{
+  height: 7.5rem;
+  margin-top: 1rem;
+  margin-left: -15rem;
+  transition: ease-in-out 0.2s;
+}
+
+.back-Button:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 768px) { 
@@ -42,6 +57,12 @@ body {
 @media(min-width: 992px){
   .button-style{
     width: 25rem;
+  }
+
+  .back-Button{
+    height: 7.5rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
   }
 }
 
