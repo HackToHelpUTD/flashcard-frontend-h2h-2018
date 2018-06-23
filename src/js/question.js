@@ -1,5 +1,8 @@
 function initFlashcardPage(){
-  var row = document.createElement("div");
+  setupForFlashcards();
+
+  var row = document.getElementsByClassName("row")[0];
+
   var leftspace = document.createElement("div");
   var main = document.createElement("div");
   var rightspace = document.createElement("div");
@@ -10,7 +13,6 @@ function initFlashcardPage(){
   var span = document.createElement("span");
   var back_flashcard = document.createElement("div");
 
-  row.classList.add("row");
   leftspace.classList.add("col-md-3");
   main.classList.add("col-12" , "col-md-6");
   rightspace.classList.add("col-md-3");
@@ -36,7 +38,13 @@ function initFlashcardPage(){
   displayTitle("Hi", "Hello")
 }
 
+function setupForFlashcards() {
+  var row = document.getElementsByClassName("row")[0];
 
+  while(row.firstChild) {
+    row.removeChild(row.firstChild);
+  }
+}
 
 function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
@@ -44,6 +52,3 @@ function displayTitle(topic, subtopic) {
 
   title.classList.add("title")
 }
-addEventListener('DOMContentLoaded', function() {
-  initFlashcardPage()
-});

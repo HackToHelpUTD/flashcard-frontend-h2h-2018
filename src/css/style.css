@@ -67,20 +67,9 @@ body {
 }
 .title {
   text-align: center;
-  margin-bottom: 20rem;
 
 }
 
-.container {
-  height: 120px;
-  width: 600px;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
 .flip-container {
   perspective: 1000;
   margin: 10px;
