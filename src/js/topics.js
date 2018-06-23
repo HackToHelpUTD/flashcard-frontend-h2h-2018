@@ -56,6 +56,8 @@ function createButtons(topics) {
   for(var i = 0; i < topics.length; i++) {
     var button = document.createElement("button");
     var topic = topics[i].topic;
+    var box = document.getElementsByClassName("box")[0];
+
     button.innerHTML = topic;
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
 
