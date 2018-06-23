@@ -1,14 +1,6 @@
-
-//page 1: heading, buttons, button words (API)
-
 var title;
 var box;
 var div2;
-
-function init() {
-  createTopicsPage();
-  topicsAPI();
-}
 
 function createTopicsPage() {
 
@@ -45,41 +37,36 @@ function createTopicsPage() {
   container.appendChild(row); 
 }
 
-function topicsAPI() {
+function getTopics() {
   //APIs
   var topics;
 
-    var request = new XMLHttpRequest(); //create a new instance of XMLHttpRequest object
-    request.onreadystatechange =  function() {
+  var request = new XMLHttpRequest(); //create a new instance of XMLHttpRequest object
+
+  request.onreadystatechange =  function() {
     if(request.readyState == 4 && request.status == 200) {
       console.log(request.response);
-     var obj = JSON.parse(request.response);
+      var obj = JSON.parse(request.response);
       topics = obj.topics;
       console.log(topics);
-      buttons(topics);
+      createButtons(topics);
     }
-  
   }
+
   request.open("GET", "/api/alltopics");
   request.send();
 }
 
-  //var topics = ["Ethics", "History", "Philosophy", "Arabic", "Physics", "Theology", "Comparative-Religion", "Biology"];
-  //var buttonsArray = new Array(topics.length);
+function createButtons(topics) {
 
- 
-function buttons(topics) {
-
-
-   for(var i = 0; i < topics.length; i++)
-  {
+  for(var i = 0; i < topics.length; i++) {
     var button = document.createElement("button");
     var topic = topics[i].topic;
     button.innerHTML = topic;
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
 
-    button.addEventListener("click", function() {
-      getSubTopics(topic);
+    button.addEventListener("click", function(e) {
+      getSubTopics(e.target.innerHTML);
     });
 
     box.appendChild(button);

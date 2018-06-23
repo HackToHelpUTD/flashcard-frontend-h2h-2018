@@ -1,4 +1,3 @@
-
 var title;
 
 function loadSubTopics(topic) {
@@ -9,7 +8,6 @@ function loadSubTopics(topic) {
 
 
 function createSubTopicsPage(topic) {
-  
   //Title
   title = document.createElement("div"); 
   title.innerHTML = "Choose a " + topic + " Deck";
@@ -41,16 +39,12 @@ function subTopicsAPI(topic) {
 }
 
 function subTopicButtons(subtopics) {
-   for(var i = 0; i < subtopics.length; i++)
-  {
+   for(var i = 0; i < subtopics.length; i++) {
     var button = document.createElement("button");
     var box = document.getElementsByClassName("box")[0];
     var subtopic = subtopics[i];
     button.innerHTML = subtopic;
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
     box.appendChild(button);
-
   }
-
-
 }
