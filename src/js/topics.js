@@ -1,9 +1,4 @@
-var title;
-var box;
-var div2;
-
 function createTopicsPage() {
-
   var row = document.createElement("div");
   row.classList.add("row", "text-center");
 
@@ -11,35 +6,35 @@ function createTopicsPage() {
   div1.classList.add("col-0", "col-sm-3");
   div1.id = "backButton";
 
-  div2 = document.createElement("div");
+  var div2 = document.createElement("div");
   div2.classList.add("col-12", "col-sm-6");
 
-  //Title
-  title = document.createElement("div"); 
+  // Title
+  var title = document.createElement("div"); 
   title.innerHTML = "Choose a Topic!";
   title.classList.add("title");
-  //Box
-  box = document.createElement("div");
+  // Box
+  var box = document.createElement("div");
   box.classList.add("box");
 
   var div3 = document.createElement("div");
   div3.classList.add("col-0", "col-sm-3");
 
-  //adding the title and the box to the center col (col2)
+  // Adding the title and the box to the center col (col2)
   div2.appendChild(title);
   div2.appendChild(box);
 
-  //adding all the columns to the row
+  // Adding all the columns to the row
   row.appendChild(div1);
   row.appendChild(div2);
   row.appendChild(div3);
 
-  //adding the row to the container
+  // Adding the row to the container
   var container = document.getElementsByClassName("container")[0];
   container.appendChild(row); 
 }
 
-//Obtains info from the APIs
+// Obtains info from the APIs
 function getTopics() {
   var topics;
   var request = new XMLHttpRequest(); 
@@ -72,29 +67,19 @@ function createButtons(topics) {
   }
 }
 
-function getSubTopics(topic)
-{
-  //Clears the buttons and title
-    var box = document.getElementsByClassName("box")[0];
-    while(box.firstChild) {
-        box.removeChild(box.firstChild); 
-      }
-    var title = document.getElementsByClassName("title")[0];
-    while(title.firstChild) {
-        title.removeChild(title.firstChild);
-      }
-    loadSubTopics(topic);
+function getSubTopics(topic) {
+  // Clears the buttons and title
+  var box = document.getElementsByClassName("box")[0];
+
+  while(box.firstChild) {
+    box.removeChild(box.firstChild); 
+  }
+
+  var title = document.getElementsByClassName("title")[0];
+
+  while(title.firstChild) {
+    title.removeChild(title.firstChild);
+  }
+
+  loadSubTopics(topic);
 }
-
-
-
- 
-
-
-
-
-
-
-
-
-
