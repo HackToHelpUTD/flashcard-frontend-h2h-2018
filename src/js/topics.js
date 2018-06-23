@@ -52,17 +52,22 @@ function buttons() {
     request.onreadystatechange =  function() {
     console.log(request.response);
   }
-  request.open("GET", "https://fcg-api.herokuapp.com/api/alltopics"); 
+  request.open("GET", "/api/topics?topic=ethics");
   request.send();*/
 
   var topics = ["Ethics", "History", "Philosophy", "Arabic", "Physics", "Theology", "Comparative-Religion", "Biology"];
+  var buttonsArray = new Array(topics.length);
 
-   for(var i = 0; i < topics.length; i++) {
+
+   for(var i = 0; i < topics.length; i++)
+  {
+
     var button = document.createElement("button");
     var topic = topics[i];
     button.innerHTML = topic;
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
     box.appendChild(button);
+    buttonsArray[i] = button;
 
     button.addEventListener("click", function() {
       getSubTopics(topic);
@@ -70,15 +75,26 @@ function buttons() {
   }
 }
 
-function getSubTopics(topic) {
-  var subtopics = ["Pre-Modern", "Contemporary", "Ancient", "Classical", "More", "More", "More", "More"];
-  div2.classList.remove("title", "box");
-  loadSubTopics();
+//function getSubTopics(topic) {
+ // var subtopics = ["Pre-Modern", "Contemporary", "Ancient", "Classical", "More", "More", "More", "More"];
+ // div2.classList.remove("title", "box");
+ // loadSubTopics();
+ // }
+   
+  
+
+
+function getSubTopics(topic)
+{
+ 
+      document.body.innerHTML = ''; //removes the topics from the page
+      loadSubTopics(topic);
+
 }
 
 
 
-
+ 
 
 
 
