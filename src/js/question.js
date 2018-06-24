@@ -1,4 +1,7 @@
-function initFlashcardPage(){
+var counter = 0;
+var questions = [];
+
+function initFlashcardPage(topic, subtopic, type, difficulty){
   setupForFlashcards();
 
   var row = document.getElementsByClassName("row")[0];
@@ -35,7 +38,19 @@ function initFlashcardPage(){
   var container = document.getElementsByClassName("container")[0];
   container.appendChild(row);
 
-  displayTitle("Hi", "Hello")
+  displayTitle(topic, subtopic)
+  getQuestions(subtopic, type, difficulty) 
+  document.getElementsByClassName("flippable")[0].addEventListener("click", function(e) {
+    var classes = e.target.classList;
+    console.log(classes);
+    for (var i = 0; i < classes.length; i++) {
+      if (classes[i] === "flipme") {
+        e.target.classList.remove("flipme");
+      } else {
+        e.target.classList.add("flipme");
+      }
+    }
+  });
 }
 
 function setupForFlashcards() {
@@ -46,9 +61,32 @@ function setupForFlashcards() {
   }
 }
 
+function getQuestions(subtopic, type, difficulty) {
+  var request = new XMLHttpRequest();
+
+  request.onreadystatechange = function () {
+    if(request.readyState == 4 && request.status == 200) {
+      var obj = JSON.parse(request.response);
+      questions = obj.questions
+      populateFlashcard(questions);
+    }
+  }
+
+  request.open("GET", "/api/questions?subtopic=" + subtopic + "&type=" + type + "&difficulty=" + difficulty);
+  request.send();
+}
+
+function populateFlashcard(questions) {
+  var front = document.getElementsByClassName("front")[0];
+  var question = front.getElementsByTagName("span")[0]; 
+  question.innerHTML = questions[counter]["question-obj"]["question-text"]; 
+  counter++;
+}
+
 function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
   title.innerHTML = subtopic + " " + topic;
 
   title.classList.add("title")
 }
+

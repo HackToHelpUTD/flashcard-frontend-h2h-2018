@@ -65,8 +65,10 @@ body {
     margin-left: 10rem;
   }
 }
+
 .title {
   text-align: center;
+  text-transform: capitalize;
 
 }
 
@@ -92,19 +94,20 @@ body {
 .flip-container,
 .front,
 .back {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  text-align: center;
+  width: 300px;
+  height: 223px;
+  line-height: 190px;
   font-size: 40px;
-  border-radius: 5px;
+  border-radius: 25px;
+  text-transform: capitalize;
 }
+
 .front,
 .back {
   backface-visibility: hidden;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 15px;
 }
 .front {
   z-index: 2;
@@ -114,7 +117,7 @@ body {
   font-size: 20px;
   position: absolute;
   top: 0px;
-  left: 42px;
+  left: 42.5px;
   font-family: verdana;
 }
 .back {
@@ -139,3 +142,10 @@ body {
   margin: 50px auto;
   border: solid;
 }
+
+
+
+
+
+
+
