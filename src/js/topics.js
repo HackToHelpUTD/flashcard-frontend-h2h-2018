@@ -8,6 +8,7 @@ function createTopicsPage() {
 
   var div2 = document.createElement("div");
   div2.classList.add("col-12", "col-sm-6");
+  div2.id = "popUp";
 
   // Title
   var title = document.createElement("div"); 
