@@ -39,6 +39,10 @@ function subTopicButtons(subtopics) {
     var box = document.getElementsByClassName("box")[0];
     var subtopic = subtopics[i];
 
+    button.addEventListener("click", function(e) {
+      session_info.subtopic = e.target.innerHTML;
+    });
+
     button.innerHTML = subtopic;
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
     button.setAttribute("data-toggle", "modal");
@@ -72,144 +76,75 @@ function createModal() {
   var modalBody = document.createElement("div");
   modalBody.classList.add("modal-body");
 
-  // Difficulty Levels
+  // Difficulty Heading
   var difficulty = document.createElement("div"); 
   difficulty.innerHTML = "Difficulty";
   difficulty.classList.add("headers");
 
-  var buttonLevels  = document.createElement("div");
-  buttonLevels.classList.add("buttonLevels");
-
-  var easyButton = document.createElement("button");
-  easyButton.classList.add("modalButtons", "btn", "btn-light");
-  easyButton.innerHTML = "Easy";
-
-  var mediumButton = document.createElement("button");
-  mediumButton.classList.add("modalButtons", "btn", "btn-light");
-  mediumButton.innerHTML = "Medium";
-
-  var difficultButton = document.createElement("button");
-  difficultButton.classList.add("modalButtons", "btn",  "btn-light");
-  difficultButton.innerHTML = "Difficult";
-            
-  buttonLevels.appendChild(easyButton);
-  buttonLevels.appendChild(mediumButton);
-  buttonLevels.appendChild(difficultButton);
-
-  // Length Buttons
+  // Length Heading
   var length = document.createElement("div"); 
   length.innerHTML = "Length";
   length.classList.add("headers");
 
-  var buttonLength = document.createElement("div");
-  buttonLength.classList.add("buttonLength");
+  var buttonLevels  = document.createElement("div");
+  buttonLevels.classList.add("buttonLevels");
 
-  var quickStudy = document.createElement("button");
-  quickStudy.classList.add("modalButtons", "btn", "btn-light");
-  quickStudy.innerHTML = "Quick Study";
+  var buttonLengths = document.createElement("div");
+  buttonLengths.classList.add("buttonLength");
 
-  var quiz = document.createElement("button");
-  quiz.classList.add("modalButtons", "btn", "btn-light");
-  quiz.innerHTML = "Quiz";
+  var difficulty_levels = ["easy", "medium", "hard"];
+  var lengths = ["Quick Study", "Quiz", "Test"];
 
-  var test = document.createElement("button");
-  test.classList.add("modalButtons", "btn", "btn-light");
-  test.innerHTML = "Test";
+  // Loop to make the difficulty level buttons
+  for (var i = 0; i < difficulty_levels.length; i++) {
+    var button = document.createElement("button");
+    button.classList.add("modalButtons", "btn", "btn-light");
+    button.innerHTML = difficulty_levels[i];
 
-  buttonLength.appendChild(quickStudy);
-  buttonLength.appendChild(quiz);
-  buttonLength.appendChild(test);
-
-  // Making Buttons Active
-  easyButton.addEventListener("click", function(e) {
-    var check = document.getElementsByClassName("buttonLevels")[0];
-    var children = check.children;
-
-    for(var i= 0; i < children.length; i++) {
-      var classList = children[i].classList;
-      for(var j = 0; j < classList.length; j++) {
-        if(classList[j] === "active") {
-          children[i].classList.remove("active");
+    button.addEventListener("click", function(e) {
+      var check = document.getElementsByClassName("buttonLevels")[0];
+      var children = check.children;
+  
+      for(var i= 0; i < children.length; i++) {
+        var classList = children[i].classList;
+        for(var j = 0; j < classList.length; j++) {
+          if(classList[j] === "active") {
+            children[i].classList.remove("active");
+          }
         }
       }
-    }
-    e.target.classList.add("active");
-  });
+      e.target.classList.add("active");
+      session_info.difficulty = e.target.innerHTML;
+    });
 
-  mediumButton.addEventListener("click", function(e) {
-    var check = document.getElementsByClassName("buttonLevels")[0];
-    var children = check.children;
+    buttonLevels.appendChild(button);
+  }
 
-    for(var i= 0; i < children.length; i++) {
-      var classList = children[i].classList;
-      for(var j = 0; j < classList.length; j++) {
-        if(classList[j] === "active") {
-          children[i].classList.remove("active");
+  // Loop to make the lengths level buttons
+  for (var i = 0; i < lengths.length; i++) {
+    var button = document.createElement("button");
+    button.classList.add("modalButtons", "btn", "btn-light");
+    button.innerHTML = lengths[i];
+
+    // Adding the active state to button
+    button.addEventListener("click", function(e) {
+      var check = document.getElementsByClassName("buttonLength")[0];
+      var children = check.children;
+
+      for(var i= 0; i < children.length; i++) {
+        var classList = children[i].classList;
+        for(var j = 0; j < classList.length; j++) {
+          if(classList[j] === "active") {
+            children[i].classList.remove("active");
+          }
         }
       }
-    }
-    e.target.classList.add("active");
-  });
+      e.target.classList.add("active");
+      session_info.type = e.target.innerHTML;
+    });
 
-  difficultButton.addEventListener("click", function(e) {
-    var check = document.getElementsByClassName("buttonLevels")[0];
-    var children = check.children;
-
-    for(var i= 0; i < children.length; i++) {
-      var classList = children[i].classList;
-      for(var j = 0; j < classList.length; j++) {
-        if(classList[j] === "active") {
-          children[i].classList.remove("active");
-        }
-      }
-    }
-    e.target.classList.add("active");
-  });
-
-  quickStudy.addEventListener("click", function(e) {
-    var check = document.getElementsByClassName("buttonLength")[0];
-    var children = check.children;
-
-    for(var i= 0; i < children.length; i++) {
-      var classList = children[i].classList;
-      for(var j = 0; j < classList.length; j++) {
-        if(classList[j] === "active") {
-          children[i].classList.remove("active");
-        }
-      }
-    }
-    e.target.classList.add("active");
-  });
-
-  quiz.addEventListener("click", function(e) {
-    var check = document.getElementsByClassName("buttonLength")[0];
-    var children = check.children;
-
-    for(var i= 0; i < children.length; i++) {
-      var classList = children[i].classList;
-      for(var j = 0; j < classList.length; j++) {
-        if(classList[j] === "active") {
-          children[i].classList.remove("active");
-        }
-      }
-    }
-    e.target.classList.add("active");
-  });
-
-  test.addEventListener("click", function(e) {
-    var check = document.getElementsByClassName("buttonLength")[0];
-    var children = check.children;
-
-    for(var i= 0; i < children.length; i++) {
-      var classList = children[i].classList;
-      for(var j = 0; j < classList.length; j++) {
-        if(classList[j] === "active") {
-          children[i].classList.remove("active");
-        }
-      }
-    }
-    e.target.classList.add("active");
-  });
+    buttonLengths.appendChild(button);
+  }
 
   // Start Button
   var start = document.createElement("button");
@@ -220,7 +155,7 @@ function createModal() {
   modalBody.appendChild(difficulty);
   modalBody.appendChild(buttonLevels);
   modalBody.appendChild(length);
-  modalBody.appendChild(buttonLength);
+  modalBody.appendChild(buttonLengths);
   modalBody.appendChild(start);
   
   header.appendChild(closeButton);
