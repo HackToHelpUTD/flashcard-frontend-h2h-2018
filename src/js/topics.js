@@ -8,6 +8,7 @@ function createTopicsPage() {
 
   var div2 = document.createElement("div");
   div2.classList.add("col-12", "col-sm-6");
+  div2.id = "popUp";
 
   // Title
   var title = document.createElement("div"); 
@@ -62,6 +63,7 @@ function createButtons(topics) {
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
 
     button.addEventListener("click", function(e) {
+      session_info.topic = e.target.innerHTML;
       getSubTopics(e.target.innerHTML);
     });
 
