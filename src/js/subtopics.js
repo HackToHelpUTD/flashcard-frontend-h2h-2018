@@ -5,7 +5,7 @@ function loadSubTopics(topic) {
 }
 
 function createSubTopicsPage(topic) {
-  //Title
+  // Title
   var title = document.createElement("div"); 
   title.innerHTML = "Choose a " + topic + " Deck";
  
@@ -47,9 +47,8 @@ function subTopicButtons(subtopics) {
   }
 }
 
-//Pop Up 
-function createModal()
-{
+// Pop Up 
+function createModal() {
   var mainModal = document.createElement("div");
   mainModal.id = "exampleModalCenter";
   mainModal.classList.add("modal", "fade");
@@ -63,23 +62,17 @@ function createModal()
   var header = document.createElement("div");
   header.classList.add("model-header");
 
-  //Close Button
+  // Close Button
   var closeButton = document.createElement("button");
   closeButton.classList.add("close");
   closeButton.setAttribute("data-dismiss", "modal");
   closeButton.innerHTML = "&times;";
 
-  // closeButton.addEventListener("click", function() {
-  // while(mainModal.firstChild) {
-  //   mainModal.removeChild(mainModal.firstChild);
-  //   }
-  // });
-
-  //Modal Body Contents
+  // Modal Body Contents
   var modalBody = document.createElement("div");
   modalBody.classList.add("modal-body");
 
-  //Difficulty Levels
+  // Difficulty Levels
   var difficulty = document.createElement("div"); 
   difficulty.innerHTML = "Difficulty";
   difficulty.classList.add("headers");
@@ -103,7 +96,7 @@ function createModal()
   buttonLevels.appendChild(mediumButton);
   buttonLevels.appendChild(difficultButton);
 
-  //Length Buttons
+  // Length Buttons
   var length = document.createElement("div"); 
   length.innerHTML = "Length";
   length.classList.add("headers");
@@ -127,7 +120,7 @@ function createModal()
   buttonLength.appendChild(quiz);
   buttonLength.appendChild(test);
 
-  //Making Buttons Active
+  // Making Buttons Active
   easyButton.addEventListener("click", function(e) {
     var check = document.getElementsByClassName("buttonLevels")[0];
     var children = check.children;
@@ -218,12 +211,12 @@ function createModal()
     e.target.classList.add("active");
   });
 
-  //Start Button
+  // Start Button
   var start = document.createElement("button");
   start.classList.add("startButton");
   start.innerHTML = "Start!";
 
-  //Appending to the Modal Body 
+  // Appending to the Modal Body 
   modalBody.appendChild(difficulty);
   modalBody.appendChild(buttonLevels);
   modalBody.appendChild(length);
@@ -244,9 +237,8 @@ function createModal()
 }
 
 
-//Back Button
-function backToTopics()
-{
+// Back Button
+function backToTopics() {
   var backButton = document.createElement("img");
   backButton.src="src/imgs/back-button.svg";
   backButton.classList.add("back-Button");

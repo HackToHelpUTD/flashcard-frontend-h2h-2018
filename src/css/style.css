@@ -24,7 +24,7 @@ body {
   color: #fff;
 }
 
-/*Topic Buttons*/
+/* Topic Buttons */
 .button-style{
   margin: 0 auto;
   margin-top: 3rem;
@@ -40,7 +40,7 @@ body {
   transform: scale(1.1);
 }
 
-/*Back Button*/
+/* Back Button */
 .back-Button{
   height: 7.5rem;
   margin-top: 1rem;
@@ -53,7 +53,7 @@ body {
   transform: scale(1.1);
 }
 
-/*Modal Text*/
+/* Modal Text */
 .headers{
   text-align: center;
   color: #70c097;
@@ -84,11 +84,11 @@ body {
   background: #efb509;
 }
 
-.active{
+.active {
   background: #efb509 !important;
 }
 
-.startButton{
+.startButton {
   width: 33%;
   background-color: #70c097;
   color: #fff;
@@ -98,8 +98,8 @@ body {
   font-size: 0.9rem;
 }
 
-/*Close Modal Button*/
-.close{
+/* Close Modal Button */
+.close {
   color: #ff0000;
   border-color: #000;
   margin-left: 20rem;
@@ -108,7 +108,7 @@ body {
   text-shadow: 0.1rem 0 black, 0 0.1rem #000, 0.1rem 0 #000, 0 0.1rem #000
 }
 
-/*Media Queries*/
+/* Media Queries */
 @media (min-width: 768px) { 
   .button-style{
     width: 17rem;
@@ -121,18 +121,18 @@ body {
   }
 }
 
-@media(min-width: 992px){
-  .button-style{
+@media(min-width: 992px) {
+  .button-style {
     width: 25rem;
   }
 
-  .back-Button{
+  .back-Button {
     height: 7.5rem;
     margin-top: 4rem;
     margin-left: 10rem;
   }
 
-  .headers{
+  .headers {
   font-size: 1.25rem;   
   }
 
@@ -146,5 +146,3 @@ body {
     font-size: 1.25rem;
   }
 }
-
-
