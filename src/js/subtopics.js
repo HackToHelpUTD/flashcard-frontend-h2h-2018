@@ -40,7 +40,7 @@ function subTopicButtons(subtopics) {
     var subtopic = subtopics[i];
 
     button.addEventListener("click", function(e) {
-      session_info.subtopic = e.target.innerHTML;
+      session_info.subtopic = e.target.innerHTML.toLowerCase();
     });
 
     button.innerHTML = subtopic;
@@ -114,7 +114,7 @@ function createModal() {
         }
       }
       e.target.classList.add("active");
-      session_info.difficulty = e.target.innerHTML;
+      session_info.difficulty = e.target.innerHTML.toLowerCase();
     });
 
     buttonLevels.appendChild(button);
@@ -140,7 +140,7 @@ function createModal() {
         }
       }
       e.target.classList.add("active");
-      session_info.type = e.target.innerHTML;
+      session_info.type = e.target.innerHTML.toLowerCase();
     });
 
     buttonLengths.appendChild(button);
