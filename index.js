@@ -3,10 +3,6 @@ const app = express();
 const path = require('path');
 var https = require('https');
 
-// This is a comment to test issues and PRs
-
-// This is a comment to test issues and PRs
-
 app.use('/src', express.static(path.join(__dirname, 'src')));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
