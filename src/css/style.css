@@ -13,6 +13,7 @@ body {
   margin-top: 5rem;
   margin-bottom: 2rem;
   font-size: 2.5rem;
+  text-transform: capitalize;
 }
 
 .box{
@@ -23,46 +24,126 @@ body {
   color: #fff;
 }
 
+/* Topic Buttons */
 .button-style{
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  width: 16rem;
+  width: 18rem;
   font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
   transition: ease-in-out 0.2s; 
+  text-transform: capitalize;
 }
 
 .button-style:hover {
   transform: scale(1.1);
 }
 
+/* Back Button */
 .back-Button{
   height: 7.5rem;
   margin-top: 1rem;
   margin-left: -15rem;
   transition: ease-in-out 0.2s;
+  filter: invert(100%);
 }
 
 .back-Button:hover {
   transform: scale(1.1);
 }
 
+/* Modal Text */
+.headers{
+  text-align: center;
+  color: #70c097;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+
+.modal-content {
+  border-radius: 2.3rem;
+}
+
+.modalButtons {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  margin: 0 auto;
+  width: 33%;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 3rem;
+}
+
+.modalButtons:hover {
+  background: #efb509;
+}
+
+.active {
+  background: #efb509 !important;
+}
+
+.startButton {
+  width: 33%;
+  background-color: #70c097;
+  color: #fff;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  border-radius: .5rem;
+  font-size: 0.9rem;
+}
+
+/* Close Modal Button */
+.close {
+  color: #ff0000;
+  border-color: #000;
+  margin-left: 20rem;
+  margin-right: 1.2rem;
+  font-size: 4rem;
+  text-shadow: 0.1rem 0 black, 0 0.1rem #000, 0.1rem 0 #000, 0 0.1rem #000
+}
+
+/* Media Queries */
 @media (min-width: 768px) { 
   .button-style{
     width: 17rem;
   }
+
+  .startButton {
+    margin-left: 9.5rem;
+    margin-right: 9.5rem;
+    font-size: 1.25rem;
+  }
 }
 
-@media(min-width: 992px){
-  .button-style{
+@media(min-width: 992px) {
+  .button-style {
     width: 25rem;
   }
 
-  .back-Button{
+  .back-Button {
     height: 7.5rem;
     margin-top: 4rem;
     margin-left: 10rem;
+  }
+
+  .headers {
+  font-size: 1.25rem;   
+  }
+
+  .modalButtons {
+  font-size: 1.25rem;
+  }
+
+  .startButton {
+    margin-left: 9.5rem;
+    margin-right: 9.5rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -143,9 +224,25 @@ body {
   border: solid;
 }
 
+ /* Scroll Bar */
 
+ /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E0E0E0;
+  border-radius: 5rem;
+}
 
-
-
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+}
