@@ -63,6 +63,7 @@ function createButtons(topics) {
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
 
     button.addEventListener("click", function(e) {
+      session_info.topic = e.target.innerHTML;
       getSubTopics(e.target.innerHTML);
     });
 
