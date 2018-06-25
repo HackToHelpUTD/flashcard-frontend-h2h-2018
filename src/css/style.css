@@ -53,11 +53,6 @@ body {
   transform: scale(1.1);
 }
 
-/*MODAL*/
-#exampleModalCenter {
-  display: block;
-}
-
 /*Modal Text*/
 .headers{
   text-align: center;

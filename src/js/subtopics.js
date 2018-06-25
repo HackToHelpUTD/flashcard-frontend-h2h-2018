@@ -1,6 +1,7 @@
 function loadSubTopics(topic) {
   createSubTopicsPage(topic);
   subTopicsAPI(topic);
+  createModal();
 }
 
 function createSubTopicsPage(topic) {
@@ -40,19 +41,18 @@ function subTopicButtons(subtopics) {
 
     button.innerHTML = subtopic;
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
-    button.addEventListener("click", function() {
-      modal();
-    });
+    button.setAttribute("data-toggle", "modal");
+    button.setAttribute("data-target", "#exampleModalCenter");
     box.appendChild(button);
   }
 }
 
 //Pop Up 
-function modal()
+function createModal()
 {
   var mainModal = document.createElement("div");
   mainModal.id = "exampleModalCenter";
-  mainModal.classList.add("modal-fade");
+  mainModal.classList.add("modal", "fade");
 
   var modalCenter = document.createElement("div");
   modalCenter.classList.add("modal-dialog", "modal-dialog-centered");
@@ -69,11 +69,11 @@ function modal()
   closeButton.setAttribute("data-dismiss", "modal");
   closeButton.innerHTML = "&times;";
 
-  closeButton.addEventListener("click", function() {
-  while(mainModal.firstChild) {
-    mainModal.removeChild(mainModal.firstChild);
-    }
-  });
+  // closeButton.addEventListener("click", function() {
+  // while(mainModal.firstChild) {
+  //   mainModal.removeChild(mainModal.firstChild);
+  //   }
+  // });
 
   //Modal Body Contents
   var modalBody = document.createElement("div");
@@ -240,7 +240,7 @@ function modal()
   var row = document.createElement("div");
   row.appendChild(div2);
   var container = document.getElementsByClassName("container")[0];
-  container.appendChild(row); 
+  container.appendChild(mainModal);
 }
 
 
