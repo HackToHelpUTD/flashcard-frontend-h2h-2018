@@ -23,7 +23,9 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   flashcard_container.classList.add("flip-container");
   flip_flashcard.classList.add("flippable", "appcon", "ac-bicycle");
   front_flashcard.classList.add("front");
-  back_flashcard.classList.add("back")
+  back_flashcard.classList.add("back");
+
+  flashcard_container.addEventListener("click", toggleCardFlip);
 
   row.appendChild(leftspace);
   row.appendChild(main);
@@ -90,3 +92,17 @@ function displayTitle(topic, subtopic) {
   title.classList.add("title")
 }
 
+function toggleCardFlip() {
+  var flashcard = document.getElementsByClassName("flippable")[0];
+  var classes = flashcard.classList;
+  
+  for (var i = 0; i < classes.length; i++) {
+    if (classes[i] === "flipme") {
+      flashcard.classList.remove("flipme");
+      return;
+    }
+  }
+
+  // The function will only make it down here if "flipme" was not present
+  flashcard.classList.add("flipme");
+}
