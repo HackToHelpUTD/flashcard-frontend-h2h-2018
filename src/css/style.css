@@ -7,7 +7,7 @@ body {
   background: #70c097;
 }
 
-.title{
+.title {
   color: #fff;
   font-family: 'Nunito', sans-serif;
   margin-top: 5rem;
@@ -16,7 +16,7 @@ body {
   text-transform: capitalize;
 }
 
-.box{
+.box {
   height: 600px;
   width: 100%;
   overflow: auto;
@@ -25,7 +25,7 @@ body {
 }
 
 /* Topic Buttons */
-.button-style{
+.button-style {
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -41,7 +41,7 @@ body {
 }
 
 /* Back Button */
-.back-Button{
+.back-Button {
   height: 7.5rem;
   margin-top: 1rem;
   margin-left: -15rem;
@@ -54,7 +54,7 @@ body {
 }
 
 /* Modal Text */
-.headers{
+.headers {
   text-align: center;
   color: #70c097;
   font-family: 'Nunito', sans-serif;

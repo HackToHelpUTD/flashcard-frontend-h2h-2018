@@ -25,8 +25,6 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   front_flashcard.classList.add("front");
   back_flashcard.classList.add("back");
 
-  flashcard_container.addEventListener("click", toggleCardFlip);
-
   row.appendChild(leftspace);
   row.appendChild(main);
   row.appendChild(rightspace);
@@ -35,24 +33,15 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   flashcard_container.appendChild(flip_flashcard);
   flip_flashcard.appendChild(front_flashcard);
   front_flashcard.appendChild(span);
-  flip_flashcard.appendChild(back_flashcard)
+  flip_flashcard.appendChild(back_flashcard);
 
   var container = document.getElementsByClassName("container")[0];
   container.appendChild(row);
 
-  displayTitle(topic, subtopic)
-  getQuestions(subtopic, type, difficulty) 
-  document.getElementsByClassName("flippable")[0].addEventListener("click", function(e) {
-    var classes = e.target.classList;
-    console.log(classes);
-    for (var i = 0; i < classes.length; i++) {
-      if (classes[i] === "flipme") {
-        e.target.classList.remove("flipme");
-      } else {
-        e.target.classList.add("flipme");
-      }
-    }
-  });
+  flashcard_container.addEventListener("click", toggleCardFlip);
+
+  displayTitle(topic, subtopic);
+  getQuestions(subtopic, type, difficulty);
 }
 
 function setupForFlashcards() {
@@ -69,7 +58,7 @@ function getQuestions(subtopic, type, difficulty) {
   request.onreadystatechange = function () {
     if(request.readyState == 4 && request.status == 200) {
       var obj = JSON.parse(request.response);
-      questions = obj.questions
+      questions = obj.questions;
       populateFlashcard(questions);
     }
   }
@@ -89,7 +78,7 @@ function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
   title.innerHTML = subtopic + " " + topic;
 
-  title.classList.add("title")
+  title.classList.add("title");
 }
 
 function toggleCardFlip() {
