@@ -133,6 +133,7 @@ body {
 }
 
 .front, .back {
+  position: absolute;
   backface-visibility: hidden;
 }
 
