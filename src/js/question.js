@@ -16,9 +16,9 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   var span = document.createElement("span");
   var back_flashcard = document.createElement("div");
 
-  leftspace.classList.add("col-md-3");
-  main.classList.add("col-12" , "col-md-6");
-  rightspace.classList.add("col-md-3");
+  leftspace.classList.add("col-sm-2", "col-md-3");
+  main.classList.add("col-12", "col-sm-8", "col-md-6");
+  rightspace.classList.add("col-sm-2", "col-md-3");
   title.id = "title";
   flashcard_container.classList.add("flip-container");
   flip_flashcard.classList.add("flippable", "appcon", "ac-bicycle");
