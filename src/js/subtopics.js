@@ -149,7 +149,12 @@ function createModal() {
   // Start Button
   var start = document.createElement("button");
   start.classList.add("startButton");
+  start.setAttribute("data-dismiss", "modal");
   start.innerHTML = "Start!";
+
+  start.addEventListener("click", function() {
+    initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
+  });
 
   // Appending to the Modal Body 
   modalBody.appendChild(difficulty);
