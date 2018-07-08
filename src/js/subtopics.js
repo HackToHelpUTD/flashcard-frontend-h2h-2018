@@ -153,9 +153,17 @@ function createModal() {
   start.innerHTML = "Start!";
 
   start.addEventListener("click", function() {
-    initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
+    if(session_info.type != "" && session_info.difficulty != "")
+    {
+      initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
+    }
+    else
+    {
+      alert("Not All Attributes Selected");
+    }
+    
   });
-
+  
   // Appending to the Modal Body 
   modalBody.appendChild(difficulty);
   modalBody.appendChild(buttonLevels);
