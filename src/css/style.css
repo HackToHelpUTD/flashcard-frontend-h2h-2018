@@ -62,7 +62,6 @@ body {
   font-size: 1rem;
 }
 
-
 .modal-content {
   border-radius: 2.3rem;
 }
@@ -119,10 +118,6 @@ body {
 .score span {
   font-size: 24px;
   line-height: 100px;
-}
-
-.main-box {
-  
 }
 
 .flashcard-buttons {
@@ -278,27 +273,4 @@ body {
     margin-right: 9.5rem;
     font-size: 1.25rem;
   }
-}
-
- /* Scroll Bar */
-
- /* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
-  border-radius: 5rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; 
 }
