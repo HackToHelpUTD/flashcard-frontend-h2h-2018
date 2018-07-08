@@ -75,6 +75,5 @@ function play_again() {
 function choose_deck() {
     console.log("choose deck");
     clearScreen();
-    createTopicsPage();
-    getTopics();
+    init();
 }
