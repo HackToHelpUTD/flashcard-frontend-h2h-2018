@@ -11,8 +11,7 @@ function clearScreen() {
     }
 }
 
-function displayResults(correct, incorrect, titleName)
-{
+function displayResults(correct, incorrect, titleName) {
     var main = document.getElementsByClassName("main-box")[0];
     var title_container = document.createElement("div");
     var title = document.createElement("h1");
