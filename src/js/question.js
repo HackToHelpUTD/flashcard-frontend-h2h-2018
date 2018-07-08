@@ -85,7 +85,7 @@ function getScore()
 {
   if(questionsCorrect == 0 && questionsIncorrect == 0)
   {
-    return 100;
+    return 0;
   }
   else
   {
@@ -156,7 +156,7 @@ function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
   title.innerHTML = subtopic + " " + topic;
 
-  title.classList.add("title");
+  title.classList.add("title"); 
 }
 
 function toggleCardFlip() {

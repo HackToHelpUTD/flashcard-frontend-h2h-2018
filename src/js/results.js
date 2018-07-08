@@ -81,6 +81,5 @@ function choose_deck()
 {
     console.log("choose deck");
     clearScreen();
-    createTopicsPage();
-    getTopics();
+    init();
 }
