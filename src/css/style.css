@@ -10,14 +10,21 @@ body {
 .title {
   color: #fff;
   font-family: 'Nunito', sans-serif;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  text-transform: capitalize;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.topicTitle {
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
 }
 
 .box {
-  height: 600px;
+  height: 17rem;
   width: 100%;
   overflow: auto;
   border: 0.0625rem solid;
@@ -29,9 +36,9 @@ body {
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  width: 18rem;
+  width: 16rem;
   font-family: 'Nunito', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   transition: ease-in-out 0.2s; 
   text-transform: capitalize;
 }
@@ -42,9 +49,9 @@ body {
 
 /* Back Button */
 .back-Button {
-  height: 7.5rem;
-  margin-top: 1rem;
-  margin-left: -15rem;
+  height: 3rem;
+  /* margin-top: 1rem; */
+  margin-left: -16rem;
   transition: ease-in-out 0.2s;
   filter: invert(100%);
 }
@@ -62,7 +69,6 @@ body {
   font-size: 1rem;
 }
 
-
 .modal-content {
   border-radius: 2.3rem;
 }
@@ -74,10 +80,11 @@ body {
   margin: 0 auto;
   width: 33%;
   font-family: 'Nunito', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 3rem;
+  text-transform: capitalize;
 }
 
 .modalButtons:hover {
@@ -92,8 +99,8 @@ body {
   width: 33%;
   background-color: #70c097;
   color: #fff;
-  margin-left: 6rem;
-  margin-right: 6rem;
+  margin-left: 5.8rem;
+  margin-right: 5.8rem;
   border-radius: .5rem;
   font-size: 0.9rem;
 }
@@ -108,7 +115,7 @@ body {
   text-shadow: 0.1rem 0 black, 0 0.1rem #000, 0.1rem 0 #000, 0 0.1rem #000
 }
 
-.title {
+.questionTitle {
   text-align: center;
   text-transform: capitalize;
 }
@@ -172,7 +179,6 @@ body {
 }
 
  /* Scroll Bar */
-
  /* width */
 ::-webkit-scrollbar {
   width: 5px;
@@ -195,63 +201,141 @@ body {
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
-  .button-style {
-    width: 17rem;
-  }
-
-  .startButton {
-    margin-left: 9.5rem;
-    margin-right: 9.5rem;
-    font-size: 1.25rem;
+/* iPhone 5/SE */
+@media (min-height: 568px) {
+  .box {
+    height: 22rem;
   }
 }
+/* iPhone 6/7/8 */
+@media (min-width: 375px) {
+  .box {
+    height: 30rem;
+  }
 
-@media(min-width: 992px) {
   .button-style {
-    width: 25rem;
+    width: 18rem;
   }
 
   .back-Button {
-    height: 7.5rem;
-    margin-top: 4rem;
-    margin-left: 10rem;
+    margin-left: -20rem;
   }
 
-  .headers {
-  font-size: 1.25rem;   
+  .startButton {
+    margin-left: 7rem;
+    margin-left: 7rem;
+  }
+}
+ 
+/* iPhone 6/7/8 Plus */
+@media (min-width: 414px) {
+  .box {
+    height: 34rem;
   }
 
-  .modalButtons {
-  font-size: 1.25rem;
+  .button-style {
+    width: 21rem;
   }
 
+  .back-Button {
+    margin-left: -22rem;
+  }
+
+  .startButton {
+    margin-left: 8rem;
+    margin-left: 8rem;
+  }
+}
+
+/* iPhone X */
+@media (min-height: 812px) {
+  .box {
+    height: 39rem;
+  }
+
+  .button-style {
+    width: 18rem;
+  }
+
+  .back-Button {
+    margin-left: -20rem;
+  }
+
+  .startButton {
+    margin-left: 7rem;
+    margin-left: 7rem;
+  }
+}
+
+@media(min-width: 552px){
+  .box {
+    height: 26.25rem;
+  }
+}
+
+/* iPad */
+@media (min-width: 768px) {
+  .button-style {
+    width: 24rem;
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .topicTitle{
+    font-size: 2.5rem;
+  }
+ 
+  .box{
+    height: 48rem;
+    width: 30rem;
+    margin-left: -5rem;
+    margin-right: 20rem
+  }
+  
   .startButton {
     margin-left: 9.5rem;
     margin-right: 9.5rem;
     font-size: 1.25rem;
   }
+
+  .back-Button {
+    height: 5rem;
+    margin-left: -8rem;
+  }
+
+  .headers {
+    font-size: 1.2rem;
+  }
+  .modalButtons {
+    font-size: 1.2rem;
+  }
 }
 
- /* Scroll Bar */
+/* Laptop */
+@media (min-width: 900px) {
+  .box {
+    margin-left: 0.6rem;
+    width: 100%;
+    height: 29rem;
+  }
 
- /* width */
-::-webkit-scrollbar {
-  width: 5px;
+  .title {
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .back-Button{
+    margin-left: 10rem;
+    margin-top: 2.5rem;
+    height: 5rem;
+  }
+
+  .topicTitle {
+    font-size: 3rem;
+  }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
-  border-radius: 5rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; 
-}

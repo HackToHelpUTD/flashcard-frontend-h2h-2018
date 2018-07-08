@@ -5,13 +5,20 @@ function loadSubTopics(topic) {
 }
 
 function createSubTopicsPage(topic) {
+
   // Title
   var title = document.createElement("div"); 
-  title.innerHTML = "Choose a " + topic + " Deck";
- 
-  title.classList.add("title");
+  
+  if(topic.charAt(0) == 'a' || topic.charAt(0) == 'e' ||topic.charAt(0) == 'i' || topic.charAt(0) == 'o' || topic.charAt(0) == 'u')  {
+    title.innerHTML = "Choose an " + topic.charAt(0).toUpperCase() + topic.substr(1,11) + topic.charAt(12).toUpperCase() + topic.substr(13) + " Deck!";
+  }
+  else {
+    title.innerHTML = "Choose a " + topic.charAt(0).toUpperCase() + topic.substr(1,11) + topic.charAt(12).toUpperCase() + topic.substr(13) + " Deck!";
+  }
+  title.classList.add("topicTitle");
   var titles = document.getElementsByClassName("title")[0];
   titles.appendChild(title);
+  
   // Calls the back button function
   backToTopics();
 }
