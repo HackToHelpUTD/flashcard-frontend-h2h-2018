@@ -92,7 +92,7 @@ function createModal() {
   var buttonLengths = document.createElement("div");
   buttonLengths.classList.add("buttonLength");
 
-  var difficulty_levels = ["easy", "medium", "hard"];
+  var difficulty_levels = ["Easy", "Medium", "Hard"];
   var lengths = ["Quick Study", "Quiz", "Test"];
 
   // Loop to make the difficulty level buttons
@@ -149,8 +149,21 @@ function createModal() {
   // Start Button
   var start = document.createElement("button");
   start.classList.add("startButton");
+  start.setAttribute("data-dismiss", "modal");
   start.innerHTML = "Start!";
 
+  start.addEventListener("click", function() {
+    if(session_info.type != "" && session_info.difficulty != "")
+    {
+      initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
+    }
+    else
+    {
+      alert("Not All Attributes Selected");
+    }
+    
+  });
+  
   // Appending to the Modal Body 
   modalBody.appendChild(difficulty);
   modalBody.appendChild(buttonLevels);

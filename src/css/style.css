@@ -7,7 +7,7 @@ body {
   background: #70c097;
 }
 
-.title{
+.title {
   color: #fff;
   font-family: 'Nunito', sans-serif;
   margin-top: 5rem;
@@ -16,7 +16,7 @@ body {
   text-transform: capitalize;
 }
 
-.box{
+.box {
   height: 600px;
   width: 100%;
   overflow: auto;
@@ -25,7 +25,7 @@ body {
 }
 
 /* Topic Buttons */
-.button-style{
+.button-style {
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -41,7 +41,7 @@ body {
 }
 
 /* Back Button */
-.back-Button{
+.back-Button {
   height: 7.5rem;
   margin-top: 1rem;
   margin-left: -15rem;
@@ -54,14 +54,13 @@ body {
 }
 
 /* Modal Text */
-.headers{
+.headers {
   text-align: center;
   color: #70c097;
   font-family: 'Nunito', sans-serif;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
-
 
 .modal-content {
   border-radius: 2.3rem;
@@ -78,6 +77,7 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 3rem;
+  text-transform: capitalize; 
 }
 
 .modalButtons:hover {
@@ -108,10 +108,194 @@ body {
   text-shadow: 0.1rem 0 black, 0 0.1rem #000, 0.1rem 0 #000, 0 0.1rem #000
 }
 
+.score {
+  background: #86E7B4;
+  width: 90%;
+  height: 100px;
+  border-radius: 15px;
+  margin: 30px auto; 
+}
+
+.score span {
+  font-size: 24px;
+  line-height: 100px;
+}
+
+.lightgreenbox {
+  background-color: #84E7B4;
+  margin-top: 5rem;
+  padding: 4rem;
+  border-radius: 45px;
+  font-size: 1.25rem;
+  line-height: 3rem;
+}
+
+.fontchanges {
+  color: #fff;
+  margin-top: 5rem;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.yellowbtn {
+  background-color: #FFD85D;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.slim {
+  font-weight: 400;
+}
+
+.flashcard-buttons {
+  position: relative;
+  margin-top: 100px;
+}
+
+.flashcard-buttons .correct {
+  margin-right: 55px;
+}
+
+.flashcard-buttons img {
+	height: 5rem;
+}
+
+.flashcard-buttons .incorrect {
+  color: #fff;
+  text-align: center;
+}
+
+.flashcard-buttons img {
+	transition: all .2s ease-in-out;
+}
+
+.flashcard-buttons img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+  transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15); /* IE 9 */
+  -webkit-transform: scale(1.15, 1.15)
+}
+
+.flashcard-buttons .correct {
+  height: 80px;
+  margin-right: 55px;
+}
+
+.flashcard-buttons .incorrect {
+  height: 80px;
+}
+
+.continue {
+  position: relative;
+  margin-top: 100px;
+}
+
+.continue .play {
+  float: left;
+  height: 80px;
+}
+
+.continue .choose {
+  float: right;
+  height: 80px;
+}
+
+.title {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.flip-container .flippable {
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-container .flipme {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  width: 100%;
+  height: 223px;
+  line-height: 190px;
+  font-size: 40px;
+  border-radius: 25px;
+  text-transform: capitalize;
+}
+
+.front, .back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  color: #000000;
+}
+
+.front span {
+  font-size: 20px;
+}
+
+.back {
+  transform: rotateY(180deg);
+  font-size: 18px;
+  border: 1px solid;
+  font-family: Verdana;
+  color: #000;
+}
+
+.ac-bicycle .front {
+  background: #fff;
+}
+
+.ac-bicycle .back {
+  background: #fff;
+  border-color: #fff;
+}
+
+.border .front {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  margin: 50px auto;
+  border: solid;
+}
+
+ /* Scroll Bar */
+
+ /* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E0E0E0;
+  border-radius: 5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff; 
+}
+
 /* Media Queries */
-@media (min-width: 768px) { 
-  .button-style{
+@media (min-width: 768px) {
+  .button-style {
     width: 17rem;
+  }
+
+  .lightgreenbox {
+    padding: 3.5rem;
   }
 
   .startButton {
@@ -145,26 +329,13 @@ body {
     margin-right: 9.5rem;
     font-size: 1.25rem;
   }
-}
- /* Scroll Bar */
 
- /* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
+  .lightgreenbox {
+    padding: 5rem;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
-  border-radius: 5rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; 
+  .yellowbtn {
+    padding: .8rem;
+    font-size: 1.75rem;
+  }
 }
