@@ -65,4 +65,22 @@ function displayResults(correct, incorrect, titleName)
     continue_container.classList.add("continue");
     play_container.classList.add("play");
     choose_container.classList.add("choose");
+
+    play_container.addEventListener("click", play_again);
+    choose_container.addEventListener("click", choose_deck);
+}
+
+function play_again()
+{
+    console.log("play again");
+    clearScreen();
+    initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
+}
+
+function choose_deck()
+{
+    console.log("choose deck");
+    clearScreen();
+    createTopicsPage();
+    getTopics();
 }
