@@ -1,15 +1,12 @@
-function loadResultsPage(correct, incorrect, title)
-{
+function loadResultsPage(correct, incorrect, title) {
     clearScreen();
     displayResults(correct, incorrect, title);
 }
 
-function clearScreen()
-{
+function clearScreen() {
     var box = document.getElementsByClassName("main-box")[0];
 
-    while(box.firstChild) 
-    {
+    while(box.firstChild) {
         box.removeChild(box.firstChild); 
     }
 }
@@ -59,7 +56,7 @@ function displayResults(correct, incorrect, titleName)
 
     title.innerHTML = titleName;
     summary.innerHTML = "Score Summary";
-    score.innerHTML = "Score: " + ((correct/(correct+incorrect))*100) + "%";
+    score.innerHTML = "Score: " + ((correct / (correct + incorrect)) * 100) + "%";
     questionsCorrect.innerHTML = "Correct: " + correct;
     questionsIncorrect.innerHTML = "Incorrect: " + incorrect;
     playAgain.innerHTML = "Play again";
@@ -79,17 +76,14 @@ function displayResults(correct, incorrect, titleName)
     chooseDeck.addEventListener("click", choose_deck);
 }
 
-function play_again()
-{
+function play_again() {
     console.log("play again");
     clearScreen();
     initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
 }
 
-function choose_deck()
-{
+function choose_deck() {
     console.log("choose deck");
     clearScreen();
-    createTopicsPage();
-    getTopics();
+    init();
 }

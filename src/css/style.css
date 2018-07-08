@@ -62,7 +62,6 @@ body {
   font-size: 1rem;
 }
 
-
 .modal-content {
   border-radius: 2.3rem;
 }
@@ -78,6 +77,7 @@ body {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 3rem;
+  text-transform: capitalize; 
 }
 
 .modalButtons:hover {
@@ -110,10 +110,10 @@ body {
 
 .score {
   background: #86E7B4;
-  width: 100%;
+  width: 90%;
   height: 100px;
   border-radius: 15px;
-  margin-top: 30px;
+  margin: 30px auto; 
 }
 
 .score span {
@@ -161,6 +161,27 @@ body {
 
 .flashcard-buttons .incorrect {
   float: right;
+  color: #fff;
+  text-align: center;
+}
+
+.flashcard-buttons img {
+	transition: all .2s ease-in-out;
+}
+
+.flashcard-buttons img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+  transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15); /* IE 9 */
+  -webkit-transform: scale(1.15, 1.15)
+}
+
+.flashcard-buttons .correct {
+  height: 80px;
+  margin-right: 55px;
+}
+
+.flashcard-buttons .incorrect {
   height: 80px;
 }
 
@@ -222,7 +243,7 @@ body {
   font-size: 18px;
   border: 1px solid;
   font-family: Verdana;
-  color: white;
+  color: #000;
 }
 
 .ac-bicycle .front {
@@ -230,7 +251,7 @@ body {
 }
 
 .ac-bicycle .back {
-  background: #efb509;
+  background: #fff;
   border-color: #fff;
 }
 
@@ -315,27 +336,4 @@ body {
     padding: .8rem;
     font-size: 1.75rem;
   }
-}
-
- /* Scroll Bar */
-
- /* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
-  border-radius: 5rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; 
 }

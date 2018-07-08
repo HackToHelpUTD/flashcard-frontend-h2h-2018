@@ -6,7 +6,17 @@ var questionsIncorrect = 0;
 function initFlashcardPage(topic, subtopic, type, difficulty){
   setupForFlashcards();
 
-  var row = document.getElementsByClassName("row")[0];
+  var row = document.createElement("div");
+  row.classList.add("row", "text-center");
+
+  var div1 = document.createElement("div");
+  div1.classList.add("col-0", "col-sm-3");
+
+  var div2 = document.createElement("div");
+  div2.classList.add("col-12", "col-sm-6");
+
+  var div3 = document.createElement("div");
+  div3.classList.add("col-0", "col-sm-3");
 
   var leftspace = document.createElement("div");
   var main = document.createElement("div");
@@ -75,7 +85,7 @@ function getScore()
 {
   if(questionsCorrect == 0 && questionsIncorrect == 0)
   {
-    return 100;
+    return 0;
   }
   else
   {
@@ -100,10 +110,10 @@ function answerIncorrect()
 }
 
 function setupForFlashcards() {
-  var row = document.getElementsByClassName("row")[0];
+  var container = document.getElementsByClassName("container")[0];
 
-  while(row.firstChild) {
-    row.removeChild(row.firstChild);
+  while(container.firstChild) {
+    container.removeChild(container.firstChild);
   }
 }
 
@@ -146,7 +156,7 @@ function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
   title.innerHTML = subtopic + " " + topic;
 
-  title.classList.add("title");
+  title.classList.add("title"); 
 }
 
 function toggleCardFlip() {
