@@ -62,7 +62,6 @@ body {
   font-size: 1rem;
 }
 
-
 .modal-content {
   border-radius: 2.3rem;
 }
@@ -106,6 +105,49 @@ body {
   margin-right: 1.2rem;
   font-size: 4rem;
   text-shadow: 0.1rem 0 black, 0 0.1rem #000, 0.1rem 0 #000, 0 0.1rem #000
+}
+
+.score {
+  background: #86E7B4;
+  width: 100%;
+  height: 100px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+.score span {
+  font-size: 24px;
+  line-height: 100px;
+}
+
+.flashcard-buttons {
+  position: relative;
+  margin-top: 100px;
+}
+
+.flashcard-buttons .correct {
+  float: left;
+  height: 80px;
+}
+
+.flashcard-buttons .incorrect {
+  float: right;
+  height: 80px;
+}
+
+.continue {
+  position: relative;
+  margin-top: 100px;
+}
+
+.continue .play {
+  float: left;
+  height: 80px;
+}
+
+.continue .choose {
+  float: right;
+  height: 80px;
 }
 
 .title {
@@ -231,27 +273,4 @@ body {
     margin-right: 9.5rem;
     font-size: 1.25rem;
   }
-}
-
- /* Scroll Bar */
-
- /* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent; 
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
-  border-radius: 5rem;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #fff; 
 }

@@ -92,7 +92,7 @@ function createModal() {
   var buttonLengths = document.createElement("div");
   buttonLengths.classList.add("buttonLength");
 
-  var difficulty_levels = ["easy", "medium", "hard"];
+  var difficulty_levels = ["Easy", "Medium", "Hard"];
   var lengths = ["Quick Study", "Quiz", "Test"];
 
   // Loop to make the difficulty level buttons
