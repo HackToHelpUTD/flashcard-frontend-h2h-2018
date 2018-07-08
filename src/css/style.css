@@ -115,7 +115,101 @@ body {
   text-shadow: 0.1rem 0 black, 0 0.1rem #000, 0.1rem 0 #000, 0 0.1rem #000
 }
 
-.questionTitle {
+.score {
+  background: #86E7B4;
+  width: 90%;
+  height: 100px;
+  border-radius: 15px;
+  margin: 30px auto; 
+}
+
+.score span {
+  font-size: 24px;
+  line-height: 100px;
+}
+
+.lightgreenbox {
+  background-color: #84E7B4;
+  margin-top: 5rem;
+  padding: 4rem;
+  border-radius: 45px;
+  font-size: 1.25rem;
+  line-height: 3rem;
+}
+
+.fontchanges {
+  color: #fff;
+  margin-top: 5rem;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.yellowbtn {
+  background-color: #FFD85D;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.slim {
+  font-weight: 400;
+}
+
+.flashcard-buttons {
+  position: relative;
+  margin-top: 100px;
+}
+
+.flashcard-buttons .correct {
+  margin-right: 55px;
+}
+
+.flashcard-buttons img {
+	height: 5rem;
+}
+
+.flashcard-buttons .incorrect {
+  color: #fff;
+  text-align: center;
+}
+
+.flashcard-buttons img {
+	transition: all .2s ease-in-out;
+}
+
+.flashcard-buttons img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+  transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15); /* IE 9 */
+  -webkit-transform: scale(1.15, 1.15)
+}
+
+.flashcard-buttons .correct {
+  height: 80px;
+  margin-right: 55px;
+}
+
+.flashcard-buttons .incorrect {
+  height: 80px;
+}
+
+.continue {
+  position: relative;
+  margin-top: 100px;
+}
+
+.continue .play {
+  float: left;
+  height: 80px;
+}
+
+.continue .choose {
+  float: right;
+  height: 80px;
+}
+
+.title {
   text-align: center;
   text-transform: capitalize;
 }
@@ -158,7 +252,7 @@ body {
   font-size: 18px;
   border: 1px solid;
   font-family: Verdana;
-  color: white;
+  color: #000;
 }
 
 .ac-bicycle .front {
@@ -166,7 +260,7 @@ body {
 }
 
 .ac-bicycle .back {
-  background: #efb509;
+  background: #fff;
   border-color: #fff;
 }
 
@@ -219,6 +313,10 @@ body {
 
   .back-Button {
     margin-left: -20rem;
+  }
+
+  .lightgreenbox {
+    padding: 3.5rem;
   }
 
   .startButton {
@@ -344,6 +442,14 @@ body {
     margin-left: 0.6rem;
     width: 100%;
     height: 40rem;
+
+  .lightgreenbox {
+    padding: 5rem;
+  }
+
+  .yellowbtn {
+    padding: .8rem;
+    font-size: 1.75rem;
   }
 }
 
