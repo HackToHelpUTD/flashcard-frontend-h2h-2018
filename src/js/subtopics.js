@@ -41,6 +41,8 @@ function subTopicButtons(subtopics) {
 
     button.addEventListener("click", function(e) {
       session_info.subtopic = e.target.innerHTML.replace(/\s+/g, '-').toLowerCase();
+      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      buttonSound.play();
     });
 
     button.innerHTML = subtopic;
@@ -104,6 +106,8 @@ function createModal() {
     button.addEventListener("click", function(e) {
       var check = document.getElementsByClassName("buttonLevels")[0];
       var children = check.children;
+      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      buttonSound.play();
   
       for(var i= 0; i < children.length; i++) {
         var classList = children[i].classList;
@@ -130,6 +134,8 @@ function createModal() {
     button.addEventListener("click", function(e) {
       var check = document.getElementsByClassName("buttonLength")[0];
       var children = check.children;
+      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      buttonSound.play();
 
       for(var i= 0; i < children.length; i++) {
         var classList = children[i].classList;
@@ -154,6 +160,8 @@ function createModal() {
 
   start.addEventListener("click", function() {
     initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
+    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    buttonSound.play();
   });
 
   // Appending to the Modal Body 
@@ -184,6 +192,8 @@ function backToTopics() {
   backButton.classList.add("back-Button");
 
   backButton.addEventListener("click", function() {
+    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    buttonSound.play();
     var container = document.getElementsByClassName("container")[0];
     while(container.firstChild) {
       container.removeChild(container.firstChild);

@@ -72,7 +72,7 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   container.appendChild(row);
 
   scoreLabel.innerHTML = "Score: " + getScore() + "%";
-
+  
   flashcard_container.addEventListener("click", toggleCardFlip);
   correctButton.addEventListener("click", answerCorrect);
   incorrectButton.addEventListener("click", answerIncorrect);
@@ -99,6 +99,8 @@ function answerCorrect()
   var score = document.getElementsByTagName("span")[2];
   score.innerHTML = "Score: " + getScore() + "%";
   populateFlashcard(questions);
+  var correctSound = new Audio("src/audio/correct-sound.ogg");
+  correctSound.play();
 }
 
 function answerIncorrect()
@@ -107,6 +109,8 @@ function answerIncorrect()
   var score = document.getElementsByTagName("span")[2];
   score.innerHTML = "Score: " + getScore() + "%";
   populateFlashcard(questions);
+  var incorrectSound = new Audio("src/audio/incorrect-sound.ogg");
+  incorrectSound.play();
 }
 
 function setupForFlashcards() {
@@ -162,6 +166,8 @@ function displayTitle(topic, subtopic) {
 function toggleCardFlip() {
   var flashcard = document.getElementsByClassName("flippable")[0];
   var classes = flashcard.classList;
+  var cardflipSound = new Audio("src/audio/flip-sound.ogg");
+  cardflipSound.play();
   
   for (var i = 0; i < classes.length; i++) {
     if (classes[i] === "flipme") {

@@ -21,9 +21,13 @@ function createTopicsPage() {
   var div3 = document.createElement("div");
   div3.classList.add("col-0", "col-sm-3");
 
+  var modal = document.createElement("div");
+  box.classList.add("box");
+
   // Adding the title and the box to the center col (col2)
   div2.appendChild(title);
   div2.appendChild(box);
+  div2.appendChild(modal);
 
   // Adding all the columns to the row
   row.appendChild(div1);
@@ -63,6 +67,8 @@ function createButtons(topics) {
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
 
     button.addEventListener("click", function(e) {
+      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      buttonSound.play();
       session_info.topic = e.target.innerHTML;
       getSubTopics(e.target.innerHTML);
     });

@@ -67,12 +67,16 @@ function displayResults(correct, incorrect, titleName) {
 }
 
 function play_again() {
+    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    buttonSound.play();
     console.log("play again");
     clearScreen();
     initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
 }
 
 function choose_deck() {
+    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    buttonSound.play();
     console.log("choose deck");
     clearScreen();
     init();
