@@ -128,6 +128,8 @@ function populateFlashcard(questions) {
     var title = document.getElementById("title");
     counter = 0;
     loadResultsPage(questionsCorrect, questionsIncorrect, title.innerText);
+    questionsCorrect = 0;
+    questionsIncorrect = 0;
   }
   else
   {
