@@ -20,6 +20,8 @@ function displayResults(correct, incorrect, titleName)
     var title = document.createElement("div");
 
     var display_container = document.createElement("div");
+    var summary_container = document.createElement("div");
+    var summary = document.createElement("span");
     var score_container = document.createElement("div");
     var score = document.createElement("span");
     var correct_container = document.createElement("div");
@@ -36,21 +38,24 @@ function displayResults(correct, incorrect, titleName)
     main.appendChild(title);
     main.appendChild(display_container);
 
+    display_container.appendChild(summary_container);
     display_container.appendChild(score_container);
     display_container.appendChild(correct_container);
     display_container.appendChild(incorrect_container);
     display_container.appendChild(continue_container);
 
+    summary_container.appendChild(summary);
     score_container.appendChild(score);
     correct_container.appendChild(questionsCorrect);
     incorrect_container.appendChild(questionsIncorrect);
-    
+
     continue_container.appendChild(play_container);
     continue_container.appendChild(choose_container);
     play_container.appendChild(playAgain);
     choose_container.appendChild(chooseDeck);
 
     title.innerHTML = titleName;
+    summary.innerHTML = "Score Summary";
     score.innerHTML = "Score: " + ((correct/(correct+incorrect))*100) + "%";
     questionsCorrect.innerHTML = "Correct: " + correct;
     questionsIncorrect.innerHTML = "Incorrect: " + incorrect;
