@@ -75,7 +75,7 @@ function getScore()
 {
   if(questionsCorrect == 0 && questionsIncorrect == 0)
   {
-    return 100;
+    return 0;
   }
   else
   {
