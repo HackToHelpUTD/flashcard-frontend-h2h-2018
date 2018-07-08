@@ -2,6 +2,7 @@ var counter = 0;
 var questions = [];
 var questionsCorrect = 0;
 var questionsIncorrect = 0;
+var isFlipped = false;
 
 function initFlashcardPage(topic, subtopic, type, difficulty) {
   setupForFlashcards();
@@ -134,6 +135,9 @@ function populateFlashcard(questions) {
     questionsCorrect = 0;
     questionsIncorrect = 0;
   } else {
+    if (isFlipped) {
+      toggleCardFlip();
+    }
     var front = document.getElementsByClassName("front")[0];
     var question = front.getElementsByTagName("span")[0]; 
     var answer = document.getElementsByTagName("span")[1];
@@ -157,10 +161,12 @@ function toggleCardFlip() {
   for (var i = 0; i < classes.length; i++) {
     if (classes[i] === "flipme") {
       flashcard.classList.remove("flipme");
+      isFlipped = false;
       return;
     }
   }
 
   // The function will only make it down here if "flipme" was not present
   flashcard.classList.add("flipme");
+  isFlipped = true;
 }
