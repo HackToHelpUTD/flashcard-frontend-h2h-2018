@@ -163,7 +163,7 @@ function createModal() {
     }
     
   });
-
+  
   // Appending to the Modal Body 
   modalBody.appendChild(difficulty);
   modalBody.appendChild(buttonLevels);
