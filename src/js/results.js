@@ -1,23 +1,22 @@
-function loadResultsPage(correct, incorrect, title)
-{
+function loadResultsPage(correct, incorrect, title) {
     clearScreen();
     displayResults(correct, incorrect, title);
 }
 
-function clearScreen()
-{
+function clearScreen() {
     var box = document.getElementsByClassName("main-box")[0];
 
-    while(box.firstChild) 
-    {
+    while(box.firstChild) {
         box.removeChild(box.firstChild); 
     }
 }
 
-function displayResults(correct, incorrect, titleName)
-{
+function displayResults(correct, incorrect, titleName) {
     var main = document.getElementsByClassName("main-box")[0];
-    var title = document.createElement("div");
+    var title_container = document.createElement("div");
+    var title = document.createElement("h1");
+    title_container.appendChild(title);
+    
 
     var display_container = document.createElement("div");
     var summary_container = document.createElement("div");
@@ -35,7 +34,7 @@ function displayResults(correct, incorrect, titleName)
     var playAgain = document.createElement("button");
     var chooseDeck = document.createElement("button");
 
-    main.appendChild(title);
+    main.appendChild(title_container);
     main.appendChild(display_container);
 
     display_container.appendChild(summary_container);
@@ -56,7 +55,7 @@ function displayResults(correct, incorrect, titleName)
 
     title.innerHTML = titleName;
     summary.innerHTML = "Score Summary";
-    score.innerHTML = "Score: " + ((correct/(correct+incorrect))*100) + "%";
+    score.innerHTML = "Score: " + ((correct / (correct + incorrect)) * 100) + "%";
     questionsCorrect.innerHTML = "Correct: " + correct;
     questionsIncorrect.innerHTML = "Incorrect: " + incorrect;
     playAgain.innerHTML = "Play again";
@@ -65,22 +64,25 @@ function displayResults(correct, incorrect, titleName)
     continue_container.classList.add("continue");
     play_container.classList.add("play");
     choose_container.classList.add("choose");
+    display_container.classList.add("lightgreenbox");
+    main.classList.add("fontchanges")
+    summary_container.classList.add("underline")
+    playAgain.classList.add("btn", "yellowbtn");
+    chooseDeck.classList.add("btn", "yellowbtn");
+    title.classList.add("slim");
 
     playAgain.addEventListener("click", play_again);
     chooseDeck.addEventListener("click", choose_deck);
 }
 
-function play_again()
-{
+function play_again() {
     console.log("play again");
     clearScreen();
     initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
 }
 
-function choose_deck()
-{
+function choose_deck() {
     console.log("choose deck");
     clearScreen();
-    createTopicsPage();
-    getTopics();
+    init();
 }

@@ -3,7 +3,7 @@ var questions = [];
 var questionsCorrect = 0;
 var questionsIncorrect = 0;
 
-function initFlashcardPage(topic, subtopic, type, difficulty){
+function initFlashcardPage(topic, subtopic, type, difficulty) {
   setupForFlashcards();
 
   var row = document.createElement("div");
@@ -81,28 +81,22 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   getQuestions(topic, subtopic, type, difficulty);
 }
 
-function getScore()
-{
-  if(questionsCorrect == 0 && questionsIncorrect == 0)
-  {
+function getScore() {
+  if(questionsCorrect == 0 && questionsIncorrect == 0) {
     return 0;
-  }
-  else
-  {
+  } else {
     return Math.round((questionsCorrect/(questionsCorrect + questionsIncorrect)) * 100);
   }
 }
 
-function answerCorrect()
-{
+function answerCorrect() {
   questionsCorrect++;
   var score = document.getElementsByTagName("span")[2];
   score.innerHTML = "Score: " + getScore() + "%";
   populateFlashcard(questions);
 }
 
-function answerIncorrect()
-{
+function answerIncorrect() {
   questionsIncorrect++;
   var score = document.getElementsByTagName("span")[2];
   score.innerHTML = "Score: " + getScore() + "%";
@@ -121,7 +115,7 @@ function getQuestions(topic, subtopic, type, difficulty) {
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function () {
-    if(request.readyState == 4 && request.status == 200) {
+    if (request.readyState == 4 && request.status == 200) {
       var obj = JSON.parse(request.response);
       questions = obj.questions;
       populateFlashcard(questions);
@@ -133,16 +127,13 @@ function getQuestions(topic, subtopic, type, difficulty) {
 }
 
 function populateFlashcard(questions) {
-  if(counter >= questions.length)
-  {
+  if (counter >= questions.length) {
     var title = document.getElementById("title");
     counter = 0;
     loadResultsPage(questionsCorrect, questionsIncorrect, title.innerText);
     questionsCorrect = 0;
     questionsIncorrect = 0;
-  }
-  else
-  {
+  } else {
     var front = document.getElementsByClassName("front")[0];
     var question = front.getElementsByTagName("span")[0]; 
     var answer = document.getElementsByTagName("span")[1];
@@ -156,7 +147,7 @@ function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
   title.innerHTML = subtopic + " " + topic;
 
-  title.classList.add("title");
+  title.classList.add("title"); 
 }
 
 function toggleCardFlip() {
