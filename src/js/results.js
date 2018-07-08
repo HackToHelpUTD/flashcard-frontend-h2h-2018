@@ -55,7 +55,7 @@ function displayResults(correct, incorrect, titleName) {
 
     title.innerHTML = titleName;
     summary.innerHTML = "Score Summary";
-    score.innerHTML = "Score: " + ((correct / (correct + incorrect)) * 100) + "%";
+    score.innerHTML = "Score: " + Math.round(((correct / (correct + incorrect)) * 100)) + "%";
     questionsCorrect.innerHTML = "Correct: " + correct;
     questionsIncorrect.innerHTML = "Incorrect: " + incorrect;
     playAgain.innerHTML = "Play again";
