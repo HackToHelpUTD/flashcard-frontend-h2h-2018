@@ -99,7 +99,9 @@ function answerCorrect()
   var score = document.getElementsByTagName("span")[2];
   score.innerHTML = "Score: " + getScore() + "%";
   populateFlashcard(questions);
-  var correctSound = new Audio("src/audio/correct-sound.ogg");
+  var correctSound = document.createElement("audio");
+  correctSound.id = "audio";
+  correctSound.src = "src/audio/correct-sound.ogg";
   correctSound.play();
 }
 
@@ -109,7 +111,9 @@ function answerIncorrect()
   var score = document.getElementsByTagName("span")[2];
   score.innerHTML = "Score: " + getScore() + "%";
   populateFlashcard(questions);
-  var incorrectSound = new Audio("src/audio/incorrect-sound.ogg");
+  var incorrectSound = document.createElement("audio");
+  incorrectSound.id = "audio";
+  incorrectSound.src = "src/audio/incorrect-sound.ogg";
   incorrectSound.play();
 }
 
@@ -166,8 +170,10 @@ function displayTitle(topic, subtopic) {
 function toggleCardFlip() {
   var flashcard = document.getElementsByClassName("flippable")[0];
   var classes = flashcard.classList;
-  var cardflipSound = new Audio("src/audio/flip-sound.ogg");
-  cardflipSound.play();
+  var flipcardSound = document.createElement("audio");
+  flipcardSound.id = "audio";
+  flipcardSound.src = "src/audio/flip-sound.ogg";
+  flipcardSound.play();
   
   for (var i = 0; i < classes.length; i++) {
     if (classes[i] === "flipme") {

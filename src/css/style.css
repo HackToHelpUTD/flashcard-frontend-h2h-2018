@@ -223,6 +223,25 @@ body {
   border: solid;
 }
 
+/* Mute Button */
+.audio-controls {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #545454;
+    font-size: xx-large;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0.5rem;
+    z-index: 1;
+    transition: 500ms ease-in-out;
+}
+
+.audio-controls:focus {
+  outline: none;
+}
+
  /* Scroll Bar */
 
  /* width */

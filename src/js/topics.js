@@ -67,7 +67,9 @@ function createButtons(topics) {
     button.classList.add("button-style", "btn", "btn-light", "btn-block");
 
     button.addEventListener("click", function(e) {
-      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      var buttonSound = document.createElement("audio");
+      buttonSound.id = "audio";
+      buttonSound.src = "src/audio/click-sound.ogg";
       buttonSound.play();
       session_info.topic = e.target.innerHTML;
       getSubTopics(e.target.innerHTML);

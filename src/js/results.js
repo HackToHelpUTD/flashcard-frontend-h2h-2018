@@ -67,7 +67,9 @@ function displayResults(correct, incorrect, titleName) {
 }
 
 function play_again() {
-    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    var buttonSound = document.createElement("audio");
+    buttonSound.id = "audio";
+    buttonSound.src = "src/audio/click-sound.ogg";
     buttonSound.play();
     console.log("play again");
     clearScreen();
@@ -75,7 +77,9 @@ function play_again() {
 }
 
 function choose_deck() {
-    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    var buttonSound = document.createElement("audio");
+    buttonSound.id = "audio";
+    buttonSound.src = "src/audio/click-sound.ogg";
     buttonSound.play();
     console.log("choose deck");
     clearScreen();

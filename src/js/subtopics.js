@@ -41,7 +41,9 @@ function subTopicButtons(subtopics) {
 
     button.addEventListener("click", function(e) {
       session_info.subtopic = e.target.innerHTML.replace(/\s+/g, '-').toLowerCase();
-      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      var buttonSound = document.createElement("audio");
+      buttonSound.id = "audio";
+      buttonSound.src = "src/audio/click-sound.ogg";
       buttonSound.play();
     });
 
@@ -106,7 +108,9 @@ function createModal() {
     button.addEventListener("click", function(e) {
       var check = document.getElementsByClassName("buttonLevels")[0];
       var children = check.children;
-      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      var buttonSound = document.createElement("audio");
+      buttonSound.id = "audio";
+      buttonSound.src = "src/audio/click-sound.ogg";
       buttonSound.play();
   
       for(var i= 0; i < children.length; i++) {
@@ -134,9 +138,10 @@ function createModal() {
     button.addEventListener("click", function(e) {
       var check = document.getElementsByClassName("buttonLength")[0];
       var children = check.children;
-      var buttonSound = new Audio("src/audio/click-sound.ogg");
+      var buttonSound = document.createElement("audio");
+      buttonSound.id = "audio";
+      buttonSound.src = "src/audio/click-sound.ogg";
       buttonSound.play();
-
       for(var i= 0; i < children.length; i++) {
         var classList = children[i].classList;
         for(var j = 0; j < classList.length; j++) {
@@ -160,7 +165,9 @@ function createModal() {
 
   start.addEventListener("click", function() {
     initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
-    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    var buttonSound = document.createElement("audio");
+    buttonSound.id = "audio";
+    buttonSound.src = "src/audio/click-sound.ogg";
     buttonSound.play();
   });
 
@@ -192,7 +199,9 @@ function backToTopics() {
   backButton.classList.add("back-Button");
 
   backButton.addEventListener("click", function() {
-    var buttonSound = new Audio("src/audio/click-sound.ogg");
+    var buttonSound = document.createElement("audio");
+    buttonSound.id = "audio";
+    buttonSound.src = "src/audio/click-sound.ogg";
     buttonSound.play();
     var container = document.getElementsByClassName("container")[0];
     while(container.firstChild) {
