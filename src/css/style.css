@@ -132,7 +132,7 @@ body {
 
 .fontchanges {
   color: #fff;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .underline {
@@ -143,6 +143,12 @@ body {
   background-color: #FFD85D;
   border-radius: 10px;
   color: #fff;
+  transition: ease-in-out 0.2s;
+}
+
+.yellowbtn:hover {
+  transform: scale(1.05);
+  background-color: #EFB509;
 }
 
 .slim {
@@ -289,15 +295,28 @@ body {
 }
 
 /* Media Queries */
+
+@media (min-width: 320px) {
+  .lightgreenbox {
+    width: 22rem;
+    margin: auto;
+  }
+}
 @media (min-width: 768px) {
   .button-style {
     width: 17rem;
   }
 
   .lightgreenbox {
-    padding: 3.5rem;
+    margin-top: 3rem;
+    padding: 4rem;
+    border-radius: 45px;
+    font-size: 1.25rem;
+    line-height: 3rem;
+    width: 22rem;
+    margin: auto;
   }
-
+   
   .startButton {
     margin-left: 9.5rem;
     margin-right: 9.5rem;
@@ -331,11 +350,15 @@ body {
   }
 
   .lightgreenbox {
-    padding: 5rem;
+    padding: 6rem;
+    font-size: 2rem;
+    line-height: 4rem;
+    width: 36rem;
+    margin: auto;
   }
 
   .yellowbtn {
-    padding: .8rem;
+    padding: .6rem;
     font-size: 1.75rem;
   }
 }
