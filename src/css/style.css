@@ -155,12 +155,14 @@ body {
 }
 
 .flashcard-buttons .correct {
-  float: left;
-  height: 80px;
+  margin-right: 55px;
+}
+
+.flashcard-buttons img {
+	height: 5rem;
 }
 
 .flashcard-buttons .incorrect {
-  float: right;
   color: #fff;
   text-align: center;
 }
