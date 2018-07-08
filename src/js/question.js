@@ -68,7 +68,7 @@ function initFlashcardPage(topic, subtopic, type, difficulty){
   incorrectButton.addEventListener("click", answerIncorrect);
 
   displayTitle(topic, subtopic);
-  getQuestions(subtopic, type, difficulty);
+  getQuestions(topic, subtopic, type, difficulty);
 }
 
 function getScore()
@@ -107,7 +107,7 @@ function setupForFlashcards() {
   }
 }
 
-function getQuestions(subtopic, type, difficulty) {
+function getQuestions(topic, subtopic, type, difficulty) {
   var request = new XMLHttpRequest();
 
   request.onreadystatechange = function () {
@@ -126,6 +126,7 @@ function populateFlashcard(questions) {
   if(counter >= questions.length)
   {
     var title = document.getElementById("title");
+    counter = 0;
     loadResultsPage(questionsCorrect, questionsIncorrect, title.innerText);
   }
   else
