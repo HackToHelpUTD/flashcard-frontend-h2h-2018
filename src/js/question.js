@@ -156,7 +156,7 @@ function displayTitle(topic, subtopic) {
   var title = document.getElementById("title");
   title.innerHTML = subtopic + " " + topic;
 
-  title.classList.add("title");
+  title.classList.add("title"); 
 }
 
 function toggleCardFlip() {
