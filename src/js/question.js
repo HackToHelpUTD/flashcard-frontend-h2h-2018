@@ -79,7 +79,7 @@ function getScore()
   }
   else
   {
-    return (questionsCorrect/(questionsCorrect + questionsIncorrect)) * 100;
+    return Math.round((questionsCorrect/(questionsCorrect + questionsIncorrect)) * 100);
   }
 }
 
