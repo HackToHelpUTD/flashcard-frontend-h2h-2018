@@ -32,8 +32,8 @@ function displayResults(correct, incorrect, titleName)
     var continue_container = document.createElement("div");
     var play_container = document.createElement("div");
     var choose_container = document.createElement("div");
-    var playAgain = document.createElement("span");
-    var chooseDeck = document.createElement("span");
+    var playAgain = document.createElement("button");
+    var chooseDeck = document.createElement("button");
 
     main.appendChild(title);
     main.appendChild(display_container);
@@ -66,8 +66,8 @@ function displayResults(correct, incorrect, titleName)
     play_container.classList.add("play");
     choose_container.classList.add("choose");
 
-    play_container.addEventListener("click", play_again);
-    choose_container.addEventListener("click", choose_deck);
+    playAgain.addEventListener("click", play_again);
+    chooseDeck.addEventListener("click", choose_deck);
 }
 
 function play_again()
