@@ -17,7 +17,10 @@ function clearScreen()
 function displayResults(correct, incorrect, titleName)
 {
     var main = document.getElementsByClassName("main-box")[0];
-    var title = document.createElement("div");
+    var title_container = document.createElement("div");
+    var title = document.createElement("h1");
+    title_container.appendChild(title);
+    
 
     var display_container = document.createElement("div");
     var summary_container = document.createElement("div");
@@ -35,7 +38,7 @@ function displayResults(correct, incorrect, titleName)
     var playAgain = document.createElement("button");
     var chooseDeck = document.createElement("button");
 
-    main.appendChild(title);
+    main.appendChild(title_container);
     main.appendChild(display_container);
 
     display_container.appendChild(summary_container);
@@ -65,6 +68,12 @@ function displayResults(correct, incorrect, titleName)
     continue_container.classList.add("continue");
     play_container.classList.add("play");
     choose_container.classList.add("choose");
+    display_container.classList.add("lightgreenbox");
+    main.classList.add("fontchanges")
+    summary_container.classList.add("underline")
+    playAgain.classList.add("btn", "yellowbtn");
+    chooseDeck.classList.add("btn", "yellowbtn");
+    title.classList.add("slim");
 
     playAgain.addEventListener("click", play_again);
     chooseDeck.addEventListener("click", choose_deck);
