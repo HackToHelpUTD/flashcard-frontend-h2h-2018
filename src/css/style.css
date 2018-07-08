@@ -119,13 +119,53 @@ body {
 .score span {
   font-size: 24px;
   line-height: 100px;
+}
+
+.lightgreenbox {
+  background-color: #84E7B4;
+  margin-top: 5rem;
+  padding: 4rem;
+  border-radius: 45px;
+  font-size: 1.25rem;
+  line-height: 3rem;
+}
+
+.fontchanges {
+  color: #fff;
+  margin-top: 5rem;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.yellowbtn {
+  background-color: #FFD85D;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.slim {
+  font-weight: 400;
+}
+
+.flashcard-buttons {
+  position: relative;
+  margin-top: 100px;
+}
+
+.flashcard-buttons .correct {
+  float: left;
+  height: 80px;
+}
+
+.flashcard-buttons .incorrect {
+  float: right;
   color: #fff;
   text-align: center;
 }
 
 .flashcard-buttons img {
-  position: relative;
-	margin-top: 50px;
 	transition: all .2s ease-in-out;
 }
 
@@ -252,6 +292,10 @@ body {
     width: 17rem;
   }
 
+  .lightgreenbox {
+    padding: 3.5rem;
+  }
+
   .startButton {
     margin-left: 9.5rem;
     margin-right: 9.5rem;
@@ -282,5 +326,14 @@ body {
     margin-left: 9.5rem;
     margin-right: 9.5rem;
     font-size: 1.25rem;
+  }
+
+  .lightgreenbox {
+    padding: 5rem;
+  }
+
+  .yellowbtn {
+    padding: .8rem;
+    font-size: 1.75rem;
   }
 }
