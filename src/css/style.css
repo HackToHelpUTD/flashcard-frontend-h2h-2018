@@ -123,11 +123,13 @@ body {
 
 .lightgreenbox {
   background-color: #84E7B4;
+  width: 90%;
+  margin: auto;
   margin-top: 5rem;
   padding: 4rem;
   border-radius: 45px;
   font-size: 1.25rem;
-  line-height: 3rem;
+  line-height: 100%;
 }
 
 .fontchanges {
@@ -143,6 +145,7 @@ body {
   background-color: #FFD85D;
   border-radius: 10px;
   color: #fff;
+  width: 100%;
 }
 
 .slim {
@@ -188,18 +191,25 @@ body {
 }
 
 .continue {
-  position: relative;
-  margin-top: 100px;
+  margin-top: 6.25rem;
 }
 
-.continue .play {
-  float: left;
-  height: 80px;
+.play {
+  width: 7rem;
+  margin: auto auto 1rem auto;
+  
 }
 
-.continue .choose {
-  float: right;
-  height: 80px;
+.choose {
+  width: 7rem;
+  margin: auto;
+  
+}
+
+.results-spacing span{
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -296,6 +306,25 @@ body {
 
   .lightgreenbox {
     padding: 3.5rem;
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .yellowbtn {
+    padding: .8rem;
+    font-size: 1.75rem;
+  }
+
+  .play {
+    width: 12rem;
+  }
+
+  .choose {
+    width: 12rem;
+  }
+
+  .results-spacing span {
+    margin-bottom: 2rem;
   }
 
   .startButton {
@@ -329,13 +358,15 @@ body {
     margin-right: 9.5rem;
     font-size: 1.25rem;
   }
-
-  .lightgreenbox {
-    padding: 5rem;
-  }
-
-  .yellowbtn {
-    padding: .8rem;
-    font-size: 1.75rem;
-  }
 }
+
+@media (min-width: 1200px) { 
+  .play {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .choose {
+    margin-left: 1rem;
+  }
+ }
