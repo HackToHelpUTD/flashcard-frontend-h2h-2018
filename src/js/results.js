@@ -29,10 +29,8 @@ function displayResults(correct, incorrect, titleName) {
     var questionsIncorrect = document.createElement("span");
 
     var continue_container = document.createElement("div");
-    var play_container = document.createElement("div");
-    var choose_container = document.createElement("div");
-    var playAgain = document.createElement("button");
-    var chooseDeck = document.createElement("button");
+    var playAgainButton = document.createElement("button");
+    var chooseDeckButton = document.createElement("button");
 
     main.appendChild(title_container);
     main.appendChild(display_container);
@@ -48,31 +46,29 @@ function displayResults(correct, incorrect, titleName) {
     correct_container.appendChild(questionsCorrect);
     incorrect_container.appendChild(questionsIncorrect);
 
-    continue_container.appendChild(play_container);
-    continue_container.appendChild(choose_container);
-    play_container.appendChild(playAgain);
-    choose_container.appendChild(chooseDeck);
+    continue_container.appendChild(playAgainButton);
+    continue_container.appendChild(chooseDeckButton);
 
     title.innerHTML = titleName;
     summary.innerHTML = "Score Summary";
     score.innerHTML = "Score: " + Math.round(((correct / (correct + incorrect)) * 100)) + "%";
     questionsCorrect.innerHTML = "Correct: " + correct;
     questionsIncorrect.innerHTML = "Incorrect: " + incorrect;
-    playAgain.innerHTML = "Play again";
-    chooseDeck.innerHTML = "Choose deck";
+    playAgainButton.innerHTML = "Play again";
+    chooseDeckButton.innerHTML = "Choose deck";
 
     continue_container.classList.add("continue");
-    play_container.classList.add("play");
-    choose_container.classList.add("choose");
-    display_container.classList.add("lightgreenbox");
+    //play_container.classList.add("play");
+    //choose_container.classList.add("choose");
+    display_container.classList.add("lightgreenbox", "results-spacing");
     main.classList.add("fontchanges")
     summary_container.classList.add("underline")
-    playAgain.classList.add("btn", "yellowbtn");
-    chooseDeck.classList.add("btn", "yellowbtn");
+    playAgainButton.classList.add("btn", "yellowbtn", "play");
+    chooseDeckButton.classList.add("btn", "yellowbtn", "choose");
     title.classList.add("slim");
 
-    playAgain.addEventListener("click", play_again);
-    chooseDeck.addEventListener("click", choose_deck);
+    playAgainButton.addEventListener("click", play_again);
+    chooseDeckButton.addEventListener("click", choose_deck);
 }
 
 function play_again() {
