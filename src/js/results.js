@@ -79,6 +79,11 @@ function play_again() {
 
 function choose_deck() {
     console.log("choose deck");
-    clearScreen();
+
+    var box = document.getElementsByClassName("container")[0];
+    while(box.firstChild) {
+        box.removeChild(box.firstChild); 
+    }
+
     init();
 }
