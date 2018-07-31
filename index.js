@@ -20,7 +20,6 @@ app.get('/api/alltopics', (req, res) => {
     });
     // The whole response has been received. Print out the result.
     response.on('end', () => {
-      console.log(JSON.parse(data));
       res.json(JSON.parse(data));
     });
   }).on("error", (err) => {
@@ -39,7 +38,6 @@ app.get('/api/topics', (req, res) => {
     });
     // The whole response has been received. Print out the result.
     response.on('end', () => {
-      console.log(JSON.parse(data));
       res.json(JSON.parse(data));
     });
   }).on("error", (err) => {
@@ -58,7 +56,6 @@ app.get('/api/questions', (req, res) => {
     });
     // The whole response has been received. Print out the result.
     response.on('end', () => {
-      console.log(JSON.parse(data));
       res.json(JSON.parse(data));
     });
   }).on("error", (err) => {
