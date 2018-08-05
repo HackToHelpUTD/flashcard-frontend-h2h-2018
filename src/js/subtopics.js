@@ -200,6 +200,7 @@ function backToTopics() {
     while(container.firstChild) {
       container.removeChild(container.firstChild);
     }
+    clearCookie();
     init();
   });
 
