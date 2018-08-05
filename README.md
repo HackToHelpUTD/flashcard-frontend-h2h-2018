@@ -1,17 +1,12 @@
 # The Ismaili Student | Flashcard Game
-This is the repository that we will be working inside to build our project.
-
-## Project Documentation
-[click here](https://fcg-api.herokuapp.com/)
+This is the codebase for the frontend of the flashcard game designed by The Ismaili
+Student, built by Hack to Help Summer 2018 students.
 
 ## How to get started
 
-* `git clone https://github.com/AtaGowani/ismaili-student-flashcard.git`
-* `cd ismaili-student-flashcard`
-* `git checkout dev`
+**Need to have Node installed**
+
+Run the following commands inside this directory:
+
 * `npm install`
 * `npm start`
-
-## Remember...
-
-*NEVER* push to master.
