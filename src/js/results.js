@@ -78,7 +78,10 @@ function play_again() {
 }
 
 function choose_deck() {
-    clearCookie();
-    clearScreen();
-    init();
+	var box = document.getElementsByClassName("container")[0];
+	while(box.firstChild) {
+		box.removeChild(box.firstChild); 
+	}
+	clearCookie();
+	init();
 }
