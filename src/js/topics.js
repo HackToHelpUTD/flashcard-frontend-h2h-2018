@@ -64,6 +64,7 @@ function createButtons(topics) {
 
     button.addEventListener("click", function(e) {
       session_info.topic = e.target.innerHTML;
+      setCookie(session_info);
       getSubTopics(e.target.innerHTML);
     });
 

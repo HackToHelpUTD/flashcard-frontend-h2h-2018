@@ -160,15 +160,12 @@ function createModal() {
   start.innerHTML = "Start!";
 
   start.addEventListener("click", function() {
-    if(session_info.type != "" && session_info.difficulty != "")
-    {
+    if(session_info.type != "" && session_info.difficulty != "") {
       initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
-    }
-    else
-    {
+      setCookie(session_info);
+    } else {
       alert("Not All Attributes Selected");
     }
-    
   });
   
   // Appending to the Modal Body 

@@ -78,7 +78,7 @@ function play_again() {
 }
 
 function choose_deck() {
-    console.log("choose deck");
+    clearCookie();
     clearScreen();
     init();
 }

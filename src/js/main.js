@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function init() {
   createTopicsPage();
-  getTopics();
+  applyCookie();
 }
 
 
