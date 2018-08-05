@@ -161,10 +161,13 @@ function createModal() {
 	start.addEventListener("click", function () {
 		if (session_info.type != "" && session_info.difficulty != "") {
 			initFlashcardPage(session_info.topic, session_info.subtopic, session_info.type, session_info.difficulty);
-		} else {
-			alert("Not All Attributes Selected");
+		} else if (session_info.type === "" && session_info.difficulty=== "") {
+			alert("Please select a difficulty and a length!")
+		} else if (session_info.type === ""){
+			alert("Please select a length!");
+		} else if (session_info.difficulty === ""){
+			alert("Please select a difficulty!")
 		}
-
 	});
 
 	// Appending to the Modal Body 
@@ -186,7 +189,6 @@ function createModal() {
 	var container = document.getElementsByClassName("container")[0];
 	container.appendChild(mainModal);
 }
-
 
 // Back Button
 function backToTopics() {
