@@ -5,11 +5,11 @@ html, body {
 
 body {
   background: #70c097;
+  font-family: 'Avenir', 'Avenir-Next', 'Avenir-Medium', 'Nunito', 'Lato', sans-serif;
 }
 
 .title {
   color: #fff;
-  font-family: 'Nunito', sans-serif;
   margin-top: 3rem;
   margin-bottom: 1rem;
   font-size: 1.8rem;
@@ -17,7 +17,6 @@ body {
 
 .topicTitle {
   color: #fff;
-  font-family: 'Nunito', sans-serif;
   margin-top: -2rem;
   margin-bottom: 1rem;
   font-size: 1.8rem;
@@ -37,7 +36,6 @@ body {
   margin-top: 3rem;
   margin-bottom: 3rem;
   width: 16rem;
-  font-family: 'Nunito', sans-serif;
   font-size: 1.3rem;
   transition: ease-in-out 0.2s; 
   text-transform: capitalize;
@@ -65,7 +63,6 @@ body {
 .headers {
   text-align: center;
   color: #70c097;
-  font-family: 'Nunito', sans-serif;
   margin-bottom: 1rem;
   font-size: 1rem;
 }
@@ -80,7 +77,6 @@ body {
   margin-top: 1rem;
   margin: 0 auto;
   width: 33%;
-  font-family: 'Nunito', sans-serif;
   font-size: 0.8rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -248,6 +244,7 @@ body {
   position: absolute;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  background-color: #fff;
 }
 
 .front {
@@ -262,19 +259,7 @@ body {
 .back {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
-  font-size: 18px;
-  border: 1px solid;
-  font-family: Verdana;
-  color: #000;
-}
-
-.ac-bicycle .front {
-  background: #fff;
-}
-
-.ac-bicycle .back {
-  background: #fff;
-  border-color: #fff;
+  font-size: 20px;
 }
 
 .border .front {
