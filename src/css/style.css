@@ -53,6 +53,7 @@ body {
   /* margin-top: 1rem; */
   margin-left: -16rem;
   transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
   filter: invert(100%);
 }
 
@@ -246,6 +247,7 @@ body {
 .front, .back {
   position: absolute;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .front {
@@ -259,6 +261,7 @@ body {
 
 .back {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   font-size: 18px;
   border: 1px solid;
   font-family: Verdana;
