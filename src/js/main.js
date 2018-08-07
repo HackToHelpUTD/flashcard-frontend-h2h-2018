@@ -1,17 +1,15 @@
 var session_info = {
-  topic: '',
-  subtopic: '',
-  type: '',
-  difficulty: ''
+	topic: '',
+	subtopic: '',
+	type: '',
+	difficulty: ''
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-  init();
+document.addEventListener("DOMContentLoaded", function () {
+	init();
 });
 
 function init() {
-  createTopicsPage();
-  getTopics();
+	createTopicsPage();
+	getTopics();
 }
-
-
